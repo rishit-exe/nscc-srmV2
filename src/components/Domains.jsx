@@ -38,7 +38,7 @@ const Domains = () => {
         <div className="mb-16 space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white">Our Domains</h1>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor
+            Our domains unite creative thinkers, tech enthusiasts, and organizers to collaborate, innovate, and drive impactful initiatives within NSCC.
           </p>
         </div>
 
