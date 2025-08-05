@@ -4,7 +4,7 @@
     "title": "CodeFest",
     "date": "Jan 12, 2024",
     "description": "A thrilling two-day coding extravaganza that united bright minds to tackle challenges, spark innovation, and push the boundaries of technology.",
-    "tags": ["Tag1", "Tag2"],
+    "tags": ["NSCC", "DSA"],
     "imageUrl": "./events-img/one.webp"
   },
   {
@@ -12,7 +12,7 @@
     "title": "DECODE HOUR",
     "date": "Jan 15, 2024",
     "description": "The flagship two-round Codeathon at SRMIST drew over 600 students, spotlighting talent from diverse academic backgrounds.",
-    "tags": ["Tag3", "Tag4"],
+    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+2"
   },
   {
@@ -20,7 +20,7 @@
     "title": "CODE RUSH",
     "date": "Jan 18, 2024",
     "description": "Code Rush was a high-energy competition where participants showcased their coding expertise, solved thrilling challenges, and vied for exciting prizes.",
-    "tags": ["Tag1", "Tag4"],
+    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+3"
   },
   {
@@ -28,7 +28,7 @@
     "title": "IdeaNova",
     "date": "Jan 21, 2024",
     "description": "IdeaNova was a vibrant event where teams showcased creative solutions to real-world problems",
-    "tags": ["Tag2", "Tag3"],
+    "tags": ["NSCC", "Ideathon"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+4"
   },
   {
@@ -36,7 +36,7 @@
     "title": "HACK NOVA",
     "date": "Jan 24, 2024",
     "description": "This vibrant coding fest at SRMIST brought together developers, innovators, and tech enthusiasts for an action-packed experience. ",
-    "tags": ["Tag1", "Tag3"],
+    "tags": ["NSCC", "Hackathon"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
   }
 ]
