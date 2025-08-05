@@ -18,10 +18,7 @@ export default function AboutUs() {
         <div className="text-white p-5 md:flex md:flex-col md:items-center lg:block space-y-5 blend-mode-plus-light ">
           <div className="text-3xl md:w- lg:w-[950px] font-helvetica-neue">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Asperiores, reprehenderit doloribus laborum eveniet, vel et minima
-              deleniti nihil voluptatibus velit magni voluptatem neque similique
-              dignissimos atque nisi! Aperiam, officia quod!
+              The Newton School of Coding Club at SRM started in November 2022 and has quickly grown into one of the most active and exciting tech communities on campus. What began as a small idea has now become a strong community of over 250 students who are all passionate about coding and technology. 
             </p>
           </div>
           <div
@@ -29,11 +26,7 @@ export default function AboutUs() {
             style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}
           >
             <p className="text-justify font-helvetica-neue text-lg ">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-              quis animi eaque, soluta perferendis velit veritatis consequuntur,
-              voluptate saepe sed alias est! Qui rem maiores nulla labore
-              perferendis consectetur ut? Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Commodi, quis nobis veritatis corrupti.
+              The Newton School of Coding Club (NSCC) has rapidly grown into a major tech community at SRM. We’ve reached over 20,000 SRM students and connected with 15,000+ students beyond the campus. Our digital presence is strong, with 5.5K+ Instagram followers and 1K+ on LinkedIn.  With 10+ successful events conducted, we've created meaningful learning and networking opportunities. NSCC stands out as a space where students collaborate, build, and innovate together.
             </p>
             <div className="h-0.5 bg-white"></div>
             <div
