@@ -217,9 +217,8 @@ const OurTeam = ({ teamData: propTeamData }) => {
                 />
               </h1>
               <p className="text-[#AAAAAA] text-sm sm:text-base md:text-lg lg:text-xl font-helvetica font-extralight leading-relaxed max-w-2xl mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitati
+                We’re a passionate team of creators, coders, and doers committed to building meaningful digital experiences.
+                Driven by curiosity and collaboration, we turn ideas into impact — one project at a time.
               </p>
             </div>
           </div>
