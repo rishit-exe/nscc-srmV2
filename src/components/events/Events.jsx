@@ -2,6 +2,23 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import './Events.css';
 import eventData from './events.json';
+import oneWebp from './events-img/one.webp';
+import twoPng from './events-img/two.png';
+import threeWebp from './events-img/three.webp';
+import fourWebp from './events-img/four.webp';
+import fiveWebp from './events-img/five.webp';
+
+// Map event IDs to imported images
+const getEventImage = (eventId) => {
+  const imageMap = {
+    1: oneWebp,
+    2: twoPng,
+    3: threeWebp,
+    4: fourWebp,
+    5: fiveWebp
+  };
+  return imageMap[eventId] || eventData.find(event => event.id === eventId)?.imageUrl;
+};
 
 const Events = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -90,10 +107,9 @@ const MobileCarousel = () => {
 
 const EventCard = ({ event }) => (
   <div className="event-card">
-    <div className="event-card-image"><img src={event.imageUrl} alt={event.title} /></div>
+    <div className="event-card-image"><img src={getEventImage(event.id)} alt={event.title} /></div>
     <div className="event-card-content">
       <p className="live-events-title">{event.title}</p>
-      <p className="event-card-date">{event.date}</p>
       <p className="live-events-description">{event.description}</p>
     </div>
     <div className="event-card-buttons">

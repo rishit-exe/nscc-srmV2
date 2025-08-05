@@ -1,58 +1,42 @@
 [
   {
     "id": 1,
-    "title": "Event 1",
+    "title": "CodeFest",
     "date": "Jan 12, 2024",
-    "description": "Description for Event 1",
-    "tags": ["Tag1", "Tag2"],
-    "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+1"
+    "description": "A thrilling two-day coding extravaganza that united bright minds to tackle challenges, spark innovation, and push the boundaries of technology.",
+    "tags": ["NSCC", "DSA"],
+    "imageUrl": "./events-img/one.webp"
   },
   {
     "id": 2,
-    "title": "Event 2",
+    "title": "DECODE HOUR",
     "date": "Jan 15, 2024",
-    "description": "Description for Event 2",
-    "tags": ["Tag3", "Tag4"],
+    "description": "The flagship two-round Codeathon at SRMIST drew over 600 students, spotlighting talent from diverse academic backgrounds.",
+    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+2"
   },
   {
     "id": 3,
-    "title": "Event 3",
+    "title": "CODE RUSH",
     "date": "Jan 18, 2024",
-    "description": "Description for Event 3",
-    "tags": ["Tag1", "Tag4"],
+    "description": "Code Rush was a high-energy competition where participants showcased their coding expertise, solved thrilling challenges, and vied for exciting prizes.",
+    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+3"
   },
   {
     "id": 4,
-    "title": "Event 4",
+    "title": "IdeaNova",
     "date": "Jan 21, 2024",
-    "description": "Description for Event 4",
-    "tags": ["Tag2", "Tag3"],
+    "description": "IdeaNova was a vibrant event where teams showcased creative solutions to real-world problems",
+    "tags": ["NSCC", "Ideathon"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+4"
   },
   {
     "id": 5,
-    "title": "Event 5",
+    "title": "HACK NOVA",
     "date": "Jan 24, 2024",
-    "description": "Description for Event 5",
-    "tags": ["Tag1", "Tag3"],
+    "description": "This vibrant coding fest at SRMIST brought together developers, innovators, and tech enthusiasts for an action-packed experience. ",
+    "tags": ["NSCC", "Hackathon"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
-  },
-  {
-    "id": 6,
-    "title": "Event 6",
-    "date": "Jan 27, 2024",
-    "description": "Description for Event 6",
-    "tags": ["Tag2", "Tag4"],
-    "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+6"
-  },
-  {
-    "id": 7,
-    "title": "Event 7",
-    "date": "Jan 30, 2024",
-    "description": "Description for Event 7",
-    "tags": ["Tag1", "Tag2"],
-    "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+7"
   }
 ]
