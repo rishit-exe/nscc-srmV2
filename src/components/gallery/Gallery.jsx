@@ -3,18 +3,22 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Gallery.css';
 
+// Import the actual images from the content folder
+import image1 from './content/image_6160x4640_1.jpeg';
+import image2 from './content/image_6160x4640_2.jpeg';
+import image3 from './content/image_6160x4640_3.jpeg';
+import image4 from './content/image_6160x4640_4.jpeg';
+import image5 from './content/image_6160x4640_5.jpeg';
+
 gsap.registerPlugin(ScrollTrigger);
 
-// Updated image data with varying dimensions and vertical offsets
+// Updated image data with the actual images from content folder
 const galleryImages = [
-  { id: 1, src: 'https://placehold.co/600x800/1c2a4a/ffffff?text=Image+1', w: 600, h: 800, y: '5%' },
-  { id: 2, src: 'https://placehold.co/800x600/3a506b/ffffff?text=Image+2', w: 800, h: 600, y: '-10%' },
-  { id: 3, src: 'https://placehold.co/600x600/5c9ead/ffffff?text=Image+3', w: 600, h: 600, y: '15%' },
-  { id: 4, src: 'https://placehold.co/800x1000/82c0cc/ffffff?text=Image+4', w: 800, h: 1000, y: '-5%' },
-  { id: 5, src: 'https://placehold.co/1200x800/a8d5e2/000000?text=Image+5', w: 1200, h: 800, y: '10%' },
-  { id: 6, src: 'https://placehold.co/700x900/d4eaf7/000000?text=Image+6', w: 700, h: 900, y: '-15%' },
-  { id: 7, src: 'https://placehold.co/900x900/f7f7f7/000000?text=Image+7', w: 900, h: 900, y: '0%' },
-  { id: 8, src: 'https://placehold.co/1000x800/1c2a4a/ffffff?text=Image+8', w: 1000, h: 800, y: '5%' },
+  { id: 1, src: image1, w: 6160, h: 4640, y: '5%' },
+  { id: 2, src: image2, w: 6160, h: 4640, y: '-10%' },
+  { id: 3, src: image3, w: 6160, h: 4640, y: '15%' },
+  { id: 4, src: image4, w: 6160, h: 4640, y: '-5%' },
+  { id: 5, src: image5, w: 6160, h: 4640, y: '10%' },
 ];
 
 export default function Gallery() {
