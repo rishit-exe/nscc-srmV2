@@ -43,7 +43,8 @@ const coreTeam = [
           { name: "other_link", url: "https://ayushxdev.vercel.app" }
 
         ]
-      }
+      },
+      
     ]
   }
 ]
