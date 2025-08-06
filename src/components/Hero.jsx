@@ -420,20 +420,26 @@ export default function Hero() {
         {/* Positioned Lorem Ipsum Section - Desktop */}
         <div className="absolute left-[25.6%] w-[24%] top-[75%] text-left hidden xl:block">
           <p className="text-base text-gray-300 leading-relaxed font-helvetica-neue">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+                Dive deep into real-world tech <br />
+
+                Learn beyond the curriculum <br />
+
+                Code with purpose, build with impact <br />
+
+                Join the developers of tomorrow
           </p>
         </div>
 
         {/* Mobile/Tablet version of Lorem Ipsum */}
         <div className="xl:hidden w-full max-w-md mx-auto mt-4 px-4">
           <p className="text-sm md:text-base text-gray-300 leading-relaxed font-helvetica-neue text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+           Dive deep into real-world tech <br />
+
+                Learn beyond the curriculum <br />
+
+                Code with purpose, build with impact <br />
+
+                Join the developers of tomorrow
           </p>
         </div>
       </section>
