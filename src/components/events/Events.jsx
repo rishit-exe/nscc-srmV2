@@ -5,7 +5,6 @@ import eventData from './events.json';
 import oneWebp from './events-img/one.webp';
 import twoPng from './events-img/two.png';
 import threeWebp from './events-img/three.webp';
-import fourWebp from './events-img/four.webp';
 import fiveWebp from './events-img/five.webp';
 import four from './events-img/four.jpg';
 import six from './events-img/six.jpg';
