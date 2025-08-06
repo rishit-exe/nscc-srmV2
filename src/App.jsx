@@ -26,7 +26,7 @@ export default function App() {
         <OurTeam />
       </div>
       <Gallery />
-      <FollowUs />
+      {/* <FollowUs /> */}
       <div id="contact">
         <Footer />
       </div>

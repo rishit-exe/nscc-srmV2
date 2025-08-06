@@ -10,7 +10,7 @@ function FlipCard(props){
                     <img 
                         src={props.image} 
                         alt={props.name}
-                        className="sponsor-logo"
+                        className="sponsor-logo w-full h-full object-cover"
                         onError={(e) => {
                             console.log(`❌ Failed to load image: ${props.image}`);
                         }}
@@ -18,7 +18,7 @@ function FlipCard(props){
                     />
                 </div>
                 <div style={style} className="flip-card-back">
-                    <p className="title">{props.name}</p>
+                    <p className="text-blue-500">{props.name}</p>
                     <p className="description">{props.description}</p>
                     {props.website && (
                         <a 

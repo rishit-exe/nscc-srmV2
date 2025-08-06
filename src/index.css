@@ -90,9 +90,6 @@
 
   .sponsi-container {
     width: 100%;
-    background-image: url('./assets/Background.png');
-    background-size: cover;
-    background-position: center;
     position: relative;
 }
 
@@ -114,20 +111,33 @@
 
 @media (max-width:720px) {
   .sponsi-container{
-    background-image: url('./assets/Background_mobile.png');
   }
   .Sponser-Title{
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 6vw, 2.5rem);
     color:rgb(142, 175, 209);
   }
   .Sponser{
-    height: 20vh;
+    height: auto;
+    min-height: 15vh;
   }
 
   .flip-card {
-    width: 93%;
-    height: 15vh;
-    margin-bottom: 0.1rem;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Extra small mobile for sponsors */
+@media (max-width: 480px) {
+  .Sponser-Title{
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    padding: 1rem 0;
+  }
+  
+  .flip-card {
+    min-height: 180px;
   }
 }
 
