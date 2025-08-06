@@ -80,7 +80,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
 
     return (
       <img
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[100px] h-[100px] sm:w-[112px] sm:h-[112px] xl:w-[134px] xl:h-[134px] rounded-full object-cover border-0 shadow-lg z-10"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[100px] h-[100px] sm:w-[112px] sm:h-[112px] xl:w-[144px] xl:h-[144px] rounded-full object-cover border-0 shadow-lg z-10"
         src={imageSrc}
         alt={member.name}
         loading="lazy"
