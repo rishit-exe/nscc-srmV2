@@ -25,27 +25,30 @@ const App = () => {
         <div className="footer-content">
         <div className="left-column">
   <ul className="main-menu">
-    <li><a href="#home">Home</a></li>
+    <li><a href="#hero">Home</a></li>
     <li><a href="#about-us">About Us</a></li>
     <li><a href="#domains">Domains</a></li>
     <li><a href="#events">Events</a></li>
     <li><a href="#sponsors">Sponsors</a></li>
-    <li><a href="#our-team">Our Team</a></li>
+    <li><a href="#our-team-section">Our Team</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#follow-us">Follow Us</a></li>
+    <li><a href="#follow">Follow Us</a></li>
     <li><a href="#contact-us">Contact Us</a></li>
   </ul>
 </div>
           <div className="right-column">
             <div className="contact">
               <h3>Contact Us</h3>
-              <p>+91 9458896788</p>
-              <p>+91 9458896088</p>
-              <p>info@nsccsrm.tech</p>
+              <p>+91 6230931075</p>
+              <p>+91 8789019185</p>
+              <p>info@nsccsrm.in</p>
             </div>
             <div className="location">
               <h3>Location</h3>
-              <p>Potheri, SRM Nagar, Kattankulathur, Tamil Nadu 603203</p>
+              <p>Newton School Coding Club SRMIST</p>
+              <p>Department of Networking and Communications, School of Computing</p>
+              <p>SRM Institute of Science and Technology</p>
+              <p>Kattankulathur, Chennai, 603203</p>
               <p>10am—6pm</p>
             </div>
             <div className="social-icons">

@@ -13,6 +13,7 @@ export default function AboutUs() {
     }
   };
   return (
+    <div id="about-us">
     <>
       <div className="bg-[url('/src/assets/Background.png')] bg-cover bg-center bg-no-repeat min-h-screen">
         <div className="text-white p-5 md:flex md:flex-col md:items-center lg:block space-y-5 blend-mode-plus-light ">
@@ -122,5 +123,6 @@ export default function AboutUs() {
         </div>
       </div>
     </>
+    </div>
   );
 }

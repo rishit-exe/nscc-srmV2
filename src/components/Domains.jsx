@@ -28,6 +28,7 @@ const Domains = () => {
   ];
 
   return (
+    <div  id="domains">
     <div
       className="min-h-screen bg-[#061529]"
       style={{
@@ -87,6 +88,7 @@ const Domains = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };

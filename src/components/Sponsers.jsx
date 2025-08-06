@@ -34,6 +34,7 @@ export default function Sponsers() {
     ];
 
     return (
+        <div id="sponsors">
         <div className="sponsi-container bg-black">
             <div className="Sponser font-helvetica-neue flex flex-col lg:flex-row lg:justify-between">
                 <p className="Sponser-Title flex justify-center items-center pt-5 lg:py-10 lg:px-5 text-white">
@@ -73,6 +74,7 @@ export default function Sponsers() {
                     ))}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

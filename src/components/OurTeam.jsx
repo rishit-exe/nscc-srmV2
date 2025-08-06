@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Element } from 'react-scroll';
 
 import BackgroundImage from "../assets/img/teams/bg.png";
 import TextureImage from "../assets/img/teams/texture.png";
