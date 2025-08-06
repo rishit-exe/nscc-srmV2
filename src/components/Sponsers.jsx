@@ -30,7 +30,23 @@ export default function Sponsers() {
             image: "/sponser/nslogo.png",
             description: "Transforming careers through practical, industry-relevant tech education.",
             website: "https://newtonschool.co"
-        }
+        },
+        {
+            name: "Microsoft",
+            bgColor: "#000000",
+            image: "/sponser/Microsoft-Logo.png",
+            //description: "Transforming careers through practical, industry-relevant tech education.",
+            website: "https://www.microsoft.com/en-in"
+        },
+        {
+            name: "Sabre",
+            bgColor: "#000000",
+            image: "/sponser/Sabre_Corporation_logo.png",
+            //description: "Transforming careers through practical, industry-relevant tech education.",
+            website: "https://www.sabre.com/"
+        },
+
+
     ];
 
     return (

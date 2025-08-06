@@ -38,5 +38,13 @@
     "description": "This vibrant coding fest at SRMIST brought together developers, innovators, and tech enthusiasts for an action-packed experience. ",
     "tags": ["NSCC", "Hackathon"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
+  },
+  {
+    "id": 6,
+    "title": "Placeopedia",
+    "date": "Jan 24, 2024",
+    "description": "",
+    "tags": ["NSCC", "Hackathon"],
+    "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
   }
 ]
