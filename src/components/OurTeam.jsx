@@ -80,7 +80,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
 
     return (
       <img
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[100px] h-[100px] sm:w-[112px] sm:h-[112px] xl:w-[144px] xl:h-[144px] rounded-full object-cover border-0 shadow-lg z-10"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[90px] h-[100px] sm:w-[112px] sm:h-[112px] xl:w-[134px] xl:h-[134px] rounded-full object-cover border-0 shadow-lg z-10"
         src={imageSrc}
         alt={member.name}
         loading="lazy"
@@ -179,14 +179,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
       style={{ height: `${totalSections * 100}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: `url(${BackgroundImage})` }}
-        />
-        <div
-          className="absolute inset-0 bg-repeat opacity-50"
-          style={{ backgroundImage: `url(${TextureImage})` }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#061529]" />
         <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 pointer-events-none mix-blend-soft-light">
           <div className="col-start-1 col-end-5 row-start-1 row-end-5 border-l border-r border-[#AAAAAA]"></div>
           <div className="col-start-2 col-end-5 row-start-1 row-end-5 border-l border-[#AAAAAA]"></div>
@@ -247,7 +240,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
                 className="w-dvw h-dvh relative px-4 sm:px-8"
               >
                 <h1 className="absolute top-18 sm:top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-3xl sm:text-4xl md:text-6xl lg:text-[120px] text-[#FFFFFF] font-normal font-helvetica text-center mix-blend-overlay leading-tight tracking-tight backdrop-blur-[20px] opacity-100 bg-clip-text z-20 mb-10 mt-5">
-                  {section.category}.
+                  {section.category}
                 </h1>
 
                 <div className="absolute top-24 sm:top-24 md:top-32 lg:top-40 left-1/2 transform -translate-x-1/2 w-full max-w-7xl px-4 h-[calc(100vh-120px)] sm:h-[calc(100vh-140px)] md:h-[calc(100vh-180px)] lg:h-[calc(100vh-200px)]">

@@ -38,6 +38,13 @@ html {
   transform: rotateY(180deg);
 }
 
+/* Ensure hover works on all devices */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -99,6 +106,39 @@ html {
 
 .flip-card:hover .sponsor-logo {
   transform: scale(1.05);
+}
+
+/* Enhanced hover effects for laptop */
+@media (min-width: 1024px) {
+  .flip-card:hover .sponsor-logo {
+    transform: scale(1.08);
+    box-shadow: 
+      0 8px 25px rgba(0, 0, 0, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flip-card:hover .flip-card-front,
+  .flip-card:hover .flip-card-back {
+    box-shadow: 
+      0 15px 50px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Touch-friendly interactions for mobile */
+@media (max-width: 1023px) {
+  .flip-card {
+    cursor: pointer;
+  }
+  
+  .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card:active .sponsor-logo {
+    transform: scale(1.05);
+  }
 }
 
 .title {
@@ -279,9 +319,10 @@ html {
 /* Small screens (480px - 767px) */
 @media (min-width: 480px) and (max-width: 767px) {
   .flip-card {
-    width: 160px;
+    width: 100%;
+    max-width: 200px;
     height: 220px;
-    margin: 10px;
+    margin: 10px auto;
   }
   
   .flip-card-front, .flip-card-back {
@@ -317,9 +358,10 @@ html {
 /* Extra small screens (320px - 479px) */
 @media (max-width: 479px) {
   .flip-card {
-    width: 140px;
+    width: 100%;
+    max-width: 280px;
     height: 200px;
-    margin: 8px;
+    margin: 8px auto;
   }
   
   .flip-card-front, .flip-card-back {
@@ -327,27 +369,27 @@ html {
   }
   
   .sponsor-logo {
-    max-width: 70px;
-    max-height: 70px;
+    max-width: 60px;
+    max-height: 60px;
     padding: 8px;
   }
   
   .title {
-    font-size: 12px;
+    font-size: clamp(10px, 3vw, 12px);
     margin-bottom: 6px;
     line-height: 1.1;
   }
   
   .description {
-    font-size: 8px;
+    font-size: clamp(7px, 2.5vw, 8px);
     margin: 5px 0;
     line-height: 1.2;
     -webkit-line-clamp: 2;
   }
   
   .website-link {
-    font-size: 8px;
-    padding: 4px 10px;
+    font-size: clamp(6px, 2vw, 8px);
+    padding: 4px 8px;
     margin-top: 5px;
   }
 }

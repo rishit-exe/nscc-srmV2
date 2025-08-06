@@ -5,21 +5,21 @@ const Domains = () => {
   
   const sections = [
     {
-      title: 'Tech.',
+      title: 'Tech',
       color: '#2563EB',
       leftText:
         "Boost your coding skills, unleash your creativity, and build innovative solutions that shape a better tomorrow.",
       // imgSrc: 'https://via.placeholder.com/150'
     },
     {
-      title: 'Creatives.',
+      title: 'Creatives',
       color: '#4A90E2',
       leftText:
         "Creatives craft, curate, and publish engaging content that reflects the club's everyday activities. It’s a team of some of the most imaginative and original minds you’ll ever come across.",
       // imgSrc: 'https://via.placeholder.com/150'
     },
     {
-      title: 'Non Tech.',
+      title: 'Non Tech',
       color: '#4A90E5',
       leftText:
         "Amplifying NSCC’s voice is what we do best. Whether it’s finding the right partners, scaling events, or handling public relations, we work as one to stay approachable, impactful, and relevant.",
@@ -29,12 +29,7 @@ const Domains = () => {
 
   return (
     <div  id="domains">
-    <div
-      className="min-h-screen bg-[#061529]"
-      style={{
-        background: 'linear-gradient(to bottom, #0B1221 0%, #061529 100%)'
-      }}
-    >
+    <div className="min-h-screen bg-gradient-to-b from-[#0a192f] to-[#061529]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-16 space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white">Our Domains</h1>

@@ -21,19 +21,24 @@ const ShaderBackground = () => {
     );
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true,
-      preserveDrawingBuffer: true,
+      antialias: window.innerWidth > 768, // Disable antialias on mobile for performance
+      preserveDrawingBuffer: false, // Better performance
       premultipliedAlpha: false,
     });
 
+    // Set proper size and pixel ratio for all devices
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    
+    // Ensure the canvas covers the full container
     renderer.domElement.style.position = "absolute";
     renderer.domElement.style.top = "0";
     renderer.domElement.style.left = "0";
-    renderer.domElement.style.width = "100%";
-    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.width = "100vw";
+    renderer.domElement.style.height = "100vh";
     renderer.domElement.style.objectFit = "cover";
+    renderer.domElement.style.zIndex = "0";
+    
     mountRef.current.appendChild(renderer.domElement);
 
     const material = new THREE.ShaderMaterial({
@@ -51,7 +56,8 @@ const ShaderBackground = () => {
       transparent: true,
     });
 
-    const geometry = new THREE.PlaneGeometry(2048, 2048);
+    // Use a larger geometry for better mobile coverage
+    const geometry = new THREE.PlaneGeometry(4096, 4096);
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
     camera.position.z = 5;
@@ -83,8 +89,14 @@ const ShaderBackground = () => {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-      renderer.domElement.style.width = "100%";
-      renderer.domElement.style.height = "100%";
+      
+      // Ensure canvas covers full viewport on resize
+      renderer.domElement.style.width = "100vw";
+      renderer.domElement.style.height = "100vh";
+      renderer.domElement.style.position = "absolute";
+      renderer.domElement.style.top = "0";
+      renderer.domElement.style.left = "0";
+      
       material.uniforms.u_resolution.value = [width, height];
     };
     window.addEventListener("resize", handleResize);
@@ -106,7 +118,14 @@ const ShaderBackground = () => {
       id="hero"
       ref={mountRef}
       className="absolute inset-0 z-0 opacity-80"
-      style={{ width: "100%", height: "100%", overflow: "hidden" }}
+      style={{ 
+        width: "100vw", 
+        height: "100vh", 
+        overflow: "hidden",
+        position: "absolute",
+        top: 0,
+        left: 0
+      }}
     />
   );
 };
@@ -133,17 +152,37 @@ float map(vec3 p) {
 }
 
 void main() {
-  vec2 a = gl_FragCoord.xy / u_resolution.x - vec2(0.5, 0.5);
+  // Normalize coordinates to center and maintain aspect ratio
+  vec2 uv = (gl_FragCoord.xy - u_resolution.xy * 0.5) / min(u_resolution.x, u_resolution.y);
+  
+  // Create symmetrical pattern by mirroring coordinates
+  vec2 a1 = uv;
+  vec2 a2 = -uv; // Mirrored coordinates for opposite corner
+  
   vec3 cl = vec3(0.0);
   float d = 2.5;
+  
+  // First pattern (original)
   for (float i = 0.; i <= (1. + 20. * u_detail); i++) {
-    vec3 p = vec3(0, 0, 4.0) + normalize(vec3(a, -1.0)) * d;
+    vec3 p = vec3(0, 0, 4.0) + normalize(vec3(a1, -1.0)) * d;
     float rz = map(p);
     float f = clamp((rz - map(p + 0.1)) * 0.5, -0.1, 1.0);
     vec3 l = vec3(0.1, 0.3, 0.4) + vec3(5.0, 2.5, 3.0) * f;
     cl = cl * l + smoothstep(2.5, 0.0, rz) * 0.6 * l;
     d += min(rz, 1.0);
   }
+  
+  // Second pattern (mirrored) - blend with the first
+  d = 2.5; // Reset distance
+  for (float i = 0.; i <= (1. + 20. * u_detail); i++) {
+    vec3 p = vec3(0, 0, 4.0) + normalize(vec3(a2, -1.0)) * d;
+    float rz = map(p);
+    float f = clamp((rz - map(p + 0.1)) * 0.5, -0.1, 1.0);
+    vec3 l = vec3(0.1, 0.3, 0.4) + vec3(5.0, 2.5, 3.0) * f;
+    cl = cl * l + smoothstep(2.5, 0.0, rz) * 0.3 * l; // Slightly less intensity for blend
+    d += min(rz, 1.0);
+  }
+  
   vec4 color = vec4(min(u_color, cl),1.0);
   color.r = max(u_background.r,color.r);
   color.g = max(u_background.g,color.g);
@@ -201,7 +240,11 @@ export default function Hero() {
     <div
       ref={heroRef}
       className="relative min-h-screen bg-[#0a192f] overflow-hidden"
-      style={{ minHeight: "100vh" }}
+      style={{ 
+        minHeight: "100vh", 
+        width: "100vw",
+        position: "relative"
+      }}
     >
       <ShaderBackground />
 
@@ -295,60 +338,63 @@ export default function Hero() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          {/* Header with Close Button */}
-          <div className="flex justify-between items-center p-6 border-b border-white/10">
-            <div className="text-xl font-bold text-white">Menu</div>
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg border border-white/20 transition-all duration-300"
-              aria-label="Close menu"
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {/* Menu Items */}
-          <div className="flex-1 flex flex-col justify-center px-6">
-            <ul className="space-y-6">
-              {navItems.map((item, index) => (
-                <li
-                  key={item.name}
-                  className={`transform transition-all duration-500 delay-${
+          /* Header with Close Button */
+                <div
+                className={`flex justify-between items-center p-6 border-b border-white/10 transition-all duration-500 ${
+                  isMenuOpen
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-8 pointer-events-none"
+                }`}
+                >
+                <div className="text-xl font-bold text-white">Menu</div>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg border border-white/20 transition-all duration-300"
+                  aria-label="Close menu"
+                  tabIndex={isMenuOpen ? 0 : -1}
+                >
+                  <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                  </svg>
+                </button>
+                </div>
+                <div className="flex-1 flex flex-col justify-center px-6">
+                <ul className="space-y-6">
+                  {navItems.map((item, index) => (
+                  <li
+                    key={item.name}
+                    className={`transform transition-all duration-500 delay-${
                     index * 100
-                  } ${
+                    } ${
                     isMenuOpen
                       ? "translate-x-0 opacity-100"
                       : "translate-x-8 opacity-0"
-                  }`}
-                >
-                  <button
+                    }`}
+                  >
+                    <button
                     onClick={() => scrollToSection(item.href)}
                     className={`block text-2xl font-medium transition-all duration-300 hover:translate-x-2 w-full text-left ${
                       item.name === "Contact"
-                        ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
-                        : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
+                      ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
+                      : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
                     }`}
-                  >
+                    >
                     {item.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Spacer to push footer to bottom */}
+                    </button>
+                  </li>
+                  ))}
+                </ul>
+                </div>
           <div className="flex-1"></div>
 
           {/* Footer */}

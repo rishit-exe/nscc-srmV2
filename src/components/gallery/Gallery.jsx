@@ -105,7 +105,7 @@ export default function Gallery() {
   return (
     <div id="gallery" className="gallery-container" ref={component}>
       <div className="gallery-background">
-        <h1 className="gallery-title">Gallery.</h1>
+        <h1 className="gallery-title">Gallery</h1>
       </div>
       <div className="gallery-carousel" ref={carousel}>
         {galleryImages.map((image) => (

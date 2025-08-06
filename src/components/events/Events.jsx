@@ -88,17 +88,44 @@ const MobileCarousel = () => {
           <motion.div
             className="event-carousel"
             animate={{ x: `-${currentSlide * 100}%` }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ type: "spring", stiffness: 400, damping: 40 }}
+            style={{ display: 'flex', width: `${eventData.length * 100}%` }}
           >
             {eventData.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <div key={event.id} style={{ width: `${100 / eventData.length}%`, flexShrink: 0 }}>
+                <EventCard event={event} />
+              </div>
             ))}
           </motion.div>
         </div>
 
         <div className="carousel-nav-mobile">
-          <button onClick={() => handleNav('prev')} className="nav-arrow prev-arrow">&#8249;</button>
-          <button onClick={() => handleNav('next')} className="nav-arrow next-arrow">&#8250;</button>
+          <button 
+            onClick={() => handleNav('prev')} 
+            className="nav-arrow prev-arrow"
+            aria-label="Previous event"
+          >
+            &#8249;
+          </button>
+          <button 
+            onClick={() => handleNav('next')} 
+            className="nav-arrow next-arrow"
+            aria-label="Next event"
+          >
+            &#8250;
+          </button>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="slide-indicators">
+          {eventData.map((_, index) => (
+            <button
+              key={index}
+              className={`indicator ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </main>

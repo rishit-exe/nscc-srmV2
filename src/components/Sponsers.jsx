@@ -35,12 +35,12 @@ export default function Sponsers() {
 
     return (
         <div id="sponsors">
-        <div className="sponsi-container bg-black">
+        <div className="bg-gradient-to-b from-[#0a192f] to-[#061529] min-h-screen">
             <div className="Sponser font-helvetica-neue flex flex-col lg:flex-row lg:justify-between">
-                <p className="Sponser-Title flex justify-center items-center pt-5 lg:py-10 lg:px-5 text-white">
-                    Our Sponsors.
+                <p className="Sponser-Title flex justify-center items-center pt-5 lg:py-10 lg:px-5 text-white text-center lg:text-left">
+                    Our Sponsors
                 </p>
-                <p className="Sponsi-Text text-sm text-left lg:mt-10 px-9 lg:px-5 text-gray-300 lg:w-1/4">
+                <p className="Sponsi-Text text-sm text-center lg:text-left lg:mt-10 px-4 lg:px-5 text-gray-300 lg:w-1/4 max-w-md lg:max-w-none mx-auto lg:mx-0">
                     We're proud to be supported by organizations that empower innovation, technology, and growth.
                 </p>
             </div>
@@ -60,8 +60,8 @@ export default function Sponsers() {
             </div>
 
             {/* Mobile View */}
-            <div className="lg:hidden px-6 mt-8">
-                <div className="grid grid-cols-2 gap-4">
+            <div className="lg:hidden px-4 mt-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
                     {sponsorsData.map((sponsor, index) => (
                         <FlipCard 
                             key={index}

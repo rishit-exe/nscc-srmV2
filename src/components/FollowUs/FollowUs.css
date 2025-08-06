@@ -4,9 +4,7 @@
   align-items: flex-start;
   min-height: 100vh;
   padding: 2rem;
-  background: 
-    radial-gradient(circle at bottom right, rgba(128, 0, 128, 0.5), transparent 40%), /* Purple circle */
-    linear-gradient(to bottom left, #0d1f2d, #0d1f2d, #050551); /* Consistent with page 2 */
+  background: linear-gradient(to bottom, #0a192f, #061529);
   color: white;
   font-family: "Helvetica Neue", sans-serif;
   box-sizing: border-box;
