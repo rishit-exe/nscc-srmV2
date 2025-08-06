@@ -51,7 +51,7 @@ const DesktopHorizontalScroll = () => {
       <div className="sticky-container">
         <motion.div style={{ x }} className="event-carousel">
           <div className="live-events-panel-desktop">
-            <h1 className="live-events-title-desktop">Live Events.</h1>
+            <h1 className="live-events-title-desktop">Live Events</h1>
             <p className="live-events-description-desktop">Scroll to explore our exciting events.</p>
           </div>
           {eventData.map((event) => (

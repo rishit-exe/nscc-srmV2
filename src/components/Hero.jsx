@@ -327,8 +327,8 @@ export default function Hero() {
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-[#0a192f]/100  transition-opacity duration-500 ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 bg-[#0a192f] transition-opacity duration-500 ${
+            isMenuOpen ? "opacity-80" : "opacity-0"
           }`}
         ></div>
 
@@ -338,7 +338,6 @@ export default function Hero() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          /* Header with Close Button */
                 <div
                 className={`flex justify-between items-center p-6 border-b border-white/10 transition-all duration-500 ${
                   isMenuOpen
