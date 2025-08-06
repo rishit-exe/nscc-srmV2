@@ -14,8 +14,8 @@ const leads = [
         ],
       },
       {
-        name: "Jane Doess",
-        designation: "Co-Lead",
+        name: "Ayush Shrivastava",
+        designation: "Co-Founder",
         bio: "Designing impact, building change.",
         social: [
           { name: "github", url: "https://github.com/janedoe" },
@@ -37,21 +37,42 @@ const coreTeam = [
         designation: "Secretary",
         bio: "God’s Flow is my backend. I just write the frontend with faith.",
         social: [
-          { name: "github", url: "https://github.com/Ayush277"},
+          { name: "github", url: "https://github.com/Ayush277" },
           { name: "instagram", url: "https://www.instagram.com/ayushkr.27" },
           { name: "linkedin", url: "https://www.linkedin.com/in/ayushkumar277" },
           { name: "other_link", url: "https://ayushxdev.vercel.app" }
+        ],
+      },
+      {
+        name: "Harshil Malhotra",
+        designation: "Joint Secretary",
+        bio: "Designing impact, building change.",
+        social: [
+          { name: "github", url: "https://github.com/Harshilmalhotra" },
+          { name: "instagram", url: "https://www.instagram.com/harshil.hm/" },
+          { name: "linkedin", url: "https://www.linkedin.com/in/harshilmalhotra/" }
+        ],
+      },
+    ],
+  },
+];
 
-        ]
-      }
-    ]
-  }
-]
+
 
 const techTeam = [
   {
     category: "Technical",
     members: [
+      {
+        name: "Punit Joshi",
+        designation: "Director",
+        bio: "Designing impact, building change.",
+        social: [
+          { name: "github", url: "https://github.com/janedoe" },
+          { name: "instagram", url: "https://instagram.com/janedoe" },
+          { name: "linkedin", url: "https://www.linkedin.com/in/janedoe" }
+        ],
+      },
       {
         name: "Shreya Samal",
         designation: "Associate Director",
