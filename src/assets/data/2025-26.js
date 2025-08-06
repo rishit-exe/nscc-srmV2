@@ -58,7 +58,6 @@ const coreTeam = [
 ];
 
 
-
 const techTeam = [
   {
     category: "Technical",

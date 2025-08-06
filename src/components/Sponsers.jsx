@@ -53,8 +53,8 @@ export default function Sponsers() {
         <div id="sponsors">
         <div className="bg-gradient-to-b from-[#0a192f] to-[#061529] min-h-screen">
             <div className="Sponser font-helvetica-neue flex flex-col lg:flex-row lg:justify-between">
-                <p className="Sponser-Title flex justify-center items-center pt-5 lg:py-10 lg:px-5 text-white text-center lg:text-left">
-                    Our Sponsors
+                <p className="text-7xl flex justify-center items-center pt-5 lg:py-10 lg:px-5 text-white text-center lg:text-left">
+                    Journeys Beyond NSCC SRM
                 </p>
                 <p className="Sponsi-Text text-sm text-center lg:text-left lg:mt-10 px-4 lg:px-5 text-gray-300 lg:w-1/4 max-w-md lg:max-w-none mx-auto lg:mx-0">
                     We're proud to be supported by organizations that empower innovation, technology, and growth.

@@ -55,7 +55,7 @@ const DesktopHorizontalScroll = () => {
       <div className="sticky-container">
         <motion.div style={{ x }} className="event-carousel">
           <div className="live-events-panel-desktop">
-            <h1 className="live-events-title-desktop">Live Events.</h1>
+            <h1 className="live-events-title-desktop">Live Events</h1>
             <p className="live-events-description-desktop">Scroll to explore our exciting events.</p>
           </div>
           {eventData.map((event) => (
@@ -71,11 +71,22 @@ const DesktopHorizontalScroll = () => {
 const MobileCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Ensure currentSlide is valid
+  useEffect(() => {
+    if (currentSlide >= eventData.length) {
+      setCurrentSlide(0);
+    }
+  }, [currentSlide, eventData.length]);
+
   const handleNav = (direction) => {
     const newSlide = direction === 'next'
       ? (currentSlide + 1) % eventData.length
       : (currentSlide - 1 + eventData.length) % eventData.length;
     setCurrentSlide(newSlide);
+  };
+
+  const handleIndicatorClick = (index) => {
+    setCurrentSlide(index);
   };
 
   return (
@@ -93,10 +104,25 @@ const MobileCarousel = () => {
             className="event-carousel"
             animate={{ x: `-${currentSlide * 100}%` }}
             transition={{ type: "spring", stiffness: 400, damping: 40 }}
-            style={{ display: 'flex', width: `${eventData.length * 100}%` }}
+            style={{ 
+              display: 'flex', 
+              width: `${eventData.length * 100}%`
+            }}
           >
-            {eventData.map((event) => (
-              <div key={event.id} style={{ width: `${100 / eventData.length}%`, flexShrink: 0 }}>
+            {eventData.map((event, index) => (
+              <div 
+                key={event.id} 
+                className="carousel-slide"
+                style={{ 
+                  width: '100%', 
+                  flexShrink: 0,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  minWidth: '100%',
+                  maxWidth: '100%'
+                }}
+              >
                 <EventCard event={event} />
               </div>
             ))}
@@ -126,7 +152,7 @@ const MobileCarousel = () => {
             <button
               key={index}
               className={`indicator ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => handleIndicatorClick(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

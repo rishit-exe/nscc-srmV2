@@ -17,7 +17,7 @@ export default function AboutUs() {
     <>
       <div className="bg-gradient-to-b from-[#0a192f] to-[#061529] min-h-screen">
         <div className="text-white p-5 md:flex md:flex-col md:items-center lg:block space-y-5 blend-mode-plus-light ">
-          <div className="text-3xl md:w- lg:w-[950px] font-helvetica-neue">
+          <div className="text-2xl text-center md:text-left lg:w-[950px] font-helvetica-neue">
             <p>
               The Newton School of Coding Club at SRM started in November 2022 and has quickly grown into one of the most active and exciting tech communities on campus. What began as a small idea has now become a strong community of over 250 students who are all passionate about coding and technology. 
             </p>

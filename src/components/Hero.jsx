@@ -327,8 +327,8 @@ export default function Hero() {
       >
         {/* Backdrop */}
         <div
-          className={`absolute inset-0 bg-[#0a192f]/100  transition-opacity duration-500 ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 bg-[#0a192f] transition-opacity duration-500 ${
+            isMenuOpen ? "opacity-80" : "opacity-0"
           }`}
         ></div>
 
@@ -338,7 +338,6 @@ export default function Hero() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          /* Header with Close Button */
                 <div
                 className={`flex justify-between items-center p-6 border-b border-white/10 transition-all duration-500 ${
                   isMenuOpen
@@ -420,20 +419,26 @@ export default function Hero() {
         {/* Positioned Lorem Ipsum Section - Desktop */}
         <div className="absolute left-[25.6%] w-[24%] top-[75%] text-left hidden xl:block">
           <p className="text-base text-gray-300 leading-relaxed font-helvetica-neue">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+                Dive deep into real-world tech <br />
+
+                Learn beyond the curriculum <br />
+
+                Code with purpose, build with impact <br />
+
+                Join the developers of tomorrow
           </p>
         </div>
 
         {/* Mobile/Tablet version of Lorem Ipsum */}
         <div className="xl:hidden w-full max-w-md mx-auto mt-4 px-4">
           <p className="text-sm md:text-base text-gray-300 leading-relaxed font-helvetica-neue text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+           Dive deep into real-world tech <br />
+
+                Learn beyond the curriculum <br />
+
+                Code with purpose, build with impact <br />
+
+                Join the developers of tomorrow
           </p>
         </div>
       </section>
