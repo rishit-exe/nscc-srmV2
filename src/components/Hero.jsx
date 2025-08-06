@@ -163,6 +163,23 @@ export default function Hero() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  // Navigation items with their corresponding section IDs
+  const navItems = [
+    { name: "Domains", href: "#domains" },
+    { name: "Live Events", href: "#events" },
+    { name: "Our Team", href: "#team" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  // Smooth scroll function
+  const scrollToSection = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isMenuOpen && !event.target.closest(".mobile-menu-container")) {
@@ -212,19 +229,19 @@ export default function Hero() {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex w-full justify-between px-4 xl:px-20 max-w-4xl">
-          {["Domains", "Live Events", "Our Team", "Contact"].map((item) => (
+          {navItems.map((item) => (
             <li
-              key={item}
+              key={item.name}
               className={`px-2 xl:px-4 py-4 ${
-                item === "Contact" ? "bg-blue-800 rounded" : ""
+                item.name === "Contact" ? "bg-blue-800 rounded" : ""
               }`}
             >
-              <a
-                href="#"
-                className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full font-helvetica-neue text-sm xl:text-base"
+              <button
+                onClick={() => scrollToSection(item.href)}
+                className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full font-helvetica-neue text-sm xl:text-base cursor-pointer"
               >
-                {item}
-              </a>
+                {item.name}
+              </button>
             </li>
           ))}
         </ul>
@@ -305,32 +322,29 @@ export default function Hero() {
           {/* Menu Items */}
           <div className="flex-1 flex flex-col justify-center px-6">
             <ul className="space-y-6">
-              {["Domains", "Live Events", "Our Team", "Contact"].map(
-                (item, index) => (
-                  <li
-                    key={item}
-                    className={`transform transition-all duration-500 delay-${
-                      index * 100
-                    } ${
-                      isMenuOpen
-                        ? "translate-x-0 opacity-100"
-                        : "translate-x-8 opacity-0"
+              {navItems.map((item, index) => (
+                <li
+                  key={item.name}
+                  className={`transform transition-all duration-500 delay-${
+                    index * 100
+                  } ${
+                    isMenuOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                >
+                  <button
+                    onClick={() => scrollToSection(item.href)}
+                    className={`block text-2xl font-medium transition-all duration-300 hover:translate-x-2 w-full text-left ${
+                      item.name === "Contact"
+                        ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
+                        : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
                     }`}
                   >
-                    <a
-                      href="#"
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`block text-2xl font-medium transition-all duration-300 hover:translate-x-2 ${
-                        item === "Contact"
-                          ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
-                          : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
-                      }`}
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+                    {item.name}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
