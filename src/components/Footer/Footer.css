@@ -1,10 +1,19 @@
-body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
   margin: 0;
   font-family: 'Helvetica Neue', sans-serif;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  
 }
 .icon {
   font-size: 40px; /* default size */
@@ -13,6 +22,12 @@ body {
     background: 
     radial-gradient(circle at bottom right, rgba(128, 0, 128, 0.5), transparent 40%),
     linear-gradient(to bottom left, #0d1f2d, #0d1f2d, #050551);
+    background-size: cover;
+    background-position: center right;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 .footer-container {
   display: flex;
@@ -107,9 +122,12 @@ body {
 }
 .text-container {
   display: flex;
+  position: relative;
   justify-content: center; 
   align-items: center; 
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 

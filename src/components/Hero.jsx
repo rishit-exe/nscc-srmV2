@@ -103,6 +103,7 @@ const ShaderBackground = () => {
 
   return (
     <div
+      id="hero"
       ref={mountRef}
       className="absolute inset-0 z-0 opacity-80"
       style={{ width: "100%", height: "100%", overflow: "hidden" }}

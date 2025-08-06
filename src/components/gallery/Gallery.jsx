@@ -99,7 +99,7 @@ export default function Gallery() {
   }
 
   return (
-    <div className="gallery-container" ref={component}>
+    <div id="gallery" className="gallery-container" ref={component}>
       <div className="gallery-background">
         <h1 className="gallery-title">Gallery.</h1>
       </div>

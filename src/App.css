@@ -4,6 +4,10 @@
       linear-gradient(to bottom left, #0d1f2d, #0d1f2d,#050551);
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-grid {
   background: 
     linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),

@@ -3,7 +3,7 @@ import "./FollowUs.css";
 
 const FollowUs = () => {
   return (
-    <div className="follow-us-container">
+    <div id="follow" className="follow-us-container">
       <div className="left-section">
         <h1 className="title">Follow Us.</h1>
         <p className="description">
