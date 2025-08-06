@@ -5,7 +5,7 @@ const Domains = () => {
   
   const sections = [
     {
-      title: 'Tech',
+      title: 'Tech.',
       color: '#2563EB',
       leftText:
         "Boost your coding skills, unleash your creativity, and build innovative solutions that shape a better tomorrow.",
