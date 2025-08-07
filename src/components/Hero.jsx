@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import * as THREE from "three";
 import NSCCEvectorImg from "../assets/NSCC EVECTOR.png";
 import nscchero from "../assets/hero.png";
@@ -29,7 +30,7 @@ const ShaderBackground = () => {
     // Set proper size and pixel ratio for all devices
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    
+
     // Ensure the canvas covers the full container
     renderer.domElement.style.position = "absolute";
     renderer.domElement.style.top = "0";
@@ -38,7 +39,7 @@ const ShaderBackground = () => {
     renderer.domElement.style.height = "100vh";
     renderer.domElement.style.objectFit = "cover";
     renderer.domElement.style.zIndex = "0";
-    
+
     mountRef.current.appendChild(renderer.domElement);
 
     const material = new THREE.ShaderMaterial({
@@ -89,14 +90,14 @@ const ShaderBackground = () => {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
-      
+
       // Ensure canvas covers full viewport on resize
       renderer.domElement.style.width = "100vw";
       renderer.domElement.style.height = "100vh";
       renderer.domElement.style.position = "absolute";
       renderer.domElement.style.top = "0";
       renderer.domElement.style.left = "0";
-      
+
       material.uniforms.u_resolution.value = [width, height];
     };
     window.addEventListener("resize", handleResize);
@@ -118,13 +119,13 @@ const ShaderBackground = () => {
       id="hero"
       ref={mountRef}
       className="absolute inset-0 z-0 opacity-80"
-      style={{ 
-        width: "100vw", 
-        height: "100vh", 
+      style={{
+        width: "100vw",
+        height: "100vh",
         overflow: "hidden",
         position: "absolute",
         top: 0,
-        left: 0
+        left: 0,
       }}
     />
   );
@@ -240,10 +241,10 @@ export default function Hero() {
     <div
       ref={heroRef}
       className="relative min-h-screen bg-[#0a192f] overflow-hidden"
-      style={{ 
-        minHeight: "100vh", 
+      style={{
+        minHeight: "100vh",
         width: "100vw",
-        position: "relative"
+        position: "relative",
       }}
     >
       <ShaderBackground />
@@ -338,62 +339,62 @@ export default function Hero() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-                <div
-                className={`flex justify-between items-center p-6 border-b border-white/10 transition-all duration-500 ${
-                  isMenuOpen
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 -translate-y-8 pointer-events-none"
-                }`}
-                >
-                <div className="text-xl font-bold text-white">Menu</div>
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg border border-white/20 transition-all duration-300"
-                  aria-label="Close menu"
-                  tabIndex={isMenuOpen ? 0 : -1}
-                >
-                  <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                  </svg>
-                </button>
-                </div>
-                <div className="flex-1 flex flex-col justify-center px-6">
-                <ul className="space-y-6">
-                  {navItems.map((item, index) => (
-                  <li
-                    key={item.name}
-                    className={`transform transition-all duration-500 delay-${
+          <div
+            className={`flex justify-between items-center p-6 border-b border-white/10 transition-all duration-500 ${
+              isMenuOpen
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-8 pointer-events-none"
+            }`}
+          >
+            <div className="text-xl font-bold text-white">Menu</div>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg border border-white/20 transition-all duration-300"
+              aria-label="Close menu"
+              tabIndex={isMenuOpen ? 0 : -1}
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div className="flex-1 flex flex-col justify-center px-6">
+            <ul className="space-y-6">
+              {navItems.map((item, index) => (
+                <li
+                  key={item.name}
+                  className={`transform transition-all duration-500 delay-${
                     index * 100
-                    } ${
+                  } ${
                     isMenuOpen
                       ? "translate-x-0 opacity-100"
                       : "translate-x-8 opacity-0"
-                    }`}
-                  >
-                    <button
+                  }`}
+                >
+                  <button
                     onClick={() => scrollToSection(item.href)}
                     className={`block text-2xl font-medium transition-all duration-300 hover:translate-x-2 w-full text-left ${
                       item.name === "Contact"
-                      ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
-                      : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
+                        ? "text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg shadow-lg"
+                        : "text-white/90 hover:text-white border-b border-transparent hover:border-white/30 pb-2"
                     }`}
-                    >
+                  >
                     {item.name}
-                    </button>
-                  </li>
-                  ))}
-                </ul>
-                </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="flex-1"></div>
 
           {/* Footer */}
@@ -405,42 +406,101 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative z-10 text-white min-h-[80vh] md:h-[90vh] flex flex-col items-center justify-center text-center px-4 md:p-6 overflow-hidden">
-        {/* Main Heading */}
+      {/* Enhanced Hero Section with spectacular animations */}
+      <section className="relative z-10 text-white min-h-[80vh] md:h-[90vh] flex flex-col items-center justify-center text-center px-4 md:p-6">
+        {/* Static decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute opacity-30"
+              style={{
+                left: `${15 + i * 12}%`,
+                top: `${20 + (i % 3) * 25}%`,
+                width: `${3 + Math.random() * 4}px`,
+                height: `${3 + Math.random() * 4}px`,
+              }}
+            >
+              <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full blur-sm opacity-60" />
+            </div>
+          ))}
+        </div>
+
+        {/* Simplified Main Heading */}
         <div className="w-full max-w-6xl mx-auto relative">
+          {/* Static background glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 blur-3xl opacity-60" />
+
           <img
             src={nscchero}
             alt="NSCC Logo"
-            className="w-full h-auto max-w-full object-contain opacity-100 -mt-8 md:-mt-16 md:relative md:-top-16 md:left-10"
+            className="w-full h-auto max-w-full object-contain -mt-8 md:-mt-16 md:relative md:-top-16 md:left-10 relative z-10 hover:brightness-110 hover:contrast-105 transition-all duration-500"
+            style={{
+              filter: "drop-shadow(0 0 30px rgba(6, 182, 212, 0.3))",
+            }}
           />
         </div>
 
-        {/* Positioned Lorem Ipsum Section - Desktop */}
+        {/* Simplified Positioned Description - Desktop */}
         <div className="absolute left-[25.6%] w-[24%] top-[75%] text-left hidden xl:block">
-          <p className="text-base text-gray-300 leading-relaxed font-helvetica-neue">
-                Dive deep into real-world tech <br />
-
-                Learn beyond the curriculum <br />
-
-                Code with purpose, build with impact <br />
-
-                Join the developers of tomorrow
-          </p>
+          <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 hover:scale-105 hover:shadow-2xl transition-all duration-500">
+            <div className="relative z-10">
+              {[
+                "Dive deep into real-world tech",
+                "Learn beyond the curriculum",
+                "Code with purpose, build with impact",
+                "Join the developers of tomorrow",
+              ].map((line, index) => (
+                <p
+                  key={index}
+                  className="text-base text-gray-200 leading-relaxed font-helvetica-neue hover:text-cyan-400 transition-colors duration-300"
+                >
+                  {line} <br />
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Mobile/Tablet version of Lorem Ipsum */}
-        <div className="xl:hidden w-full max-w-md mx-auto mt-4 px-4">
-          <p className="text-sm md:text-base text-gray-300 leading-relaxed font-helvetica-neue text-center">
-           Dive deep into real-world tech <br />
-
-                Learn beyond the curriculum <br />
-
-                Code with purpose, build with impact <br />
-
-                Join the developers of tomorrow
-          </p>
-        </div>
+        {/* Enhanced Mobile/Tablet version */}
+        <motion.div
+          className="xl:hidden w-full max-w-md mx-auto mt-4 px-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, delay: 1 }}
+        >
+          <motion.div
+            className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 relative overflow-hidden"
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "0 20px 40px rgba(6, 182, 212, 0.2)",
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div className="relative z-10">
+              {[
+                "Dive deep into real-world tech",
+                "Learn beyond the curriculum",
+                "Code with purpose, build with impact",
+                "Join the developers of tomorrow",
+              ].map((line, index) => (
+                <motion.p
+                  key={index}
+                  className="text-sm md:text-base text-gray-200 leading-relaxed font-helvetica-neue text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 + index * 0.2 }}
+                  whileHover={{
+                    color: "#06b6d4",
+                    textShadow: "0 0 8px rgba(6, 182, 212, 0.5)",
+                  }}
+                >
+                  {line} <br />
+                </motion.p>
+              ))}
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );

@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, useCallback, useMemo } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Element } from "react-scroll";
+import { Element } from 'react-scroll';
 
 import BackgroundImage from "../assets/img/teams/bg.png";
 import TextureImage from "../assets/img/teams/texture.png";
@@ -24,48 +23,37 @@ const socialIconMap = {
 
 const OurTeam = ({ teamData: propTeamData }) => {
   const scrollRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-  });
+  const [currentSection, setCurrentSection] = useState(0);
 
   const dataToUse = useMemo(() => propTeamData || teamData, [propTeamData]);
-  const totalSections = useMemo(
-    () => Object.keys(dataToUse).length + 1,
-    [dataToUse]
-  );
+  const sections = Object.keys(dataToUse);
 
-  // Calculate the correct scroll percentage based on actual sections
-  const scrollPercentage = useMemo(() => {
-    // For n sections, we need to move (n-1) sections to the left
-    // Each section is 100vw, so total movement is (n-1) * 100vw
-    const moveDistance = (totalSections - 1) * 100;
-    return `-${moveDistance}vw`;
-  }, [totalSections]);
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0vw", scrollPercentage]);
-  const [visibleSections, setVisibleSections] = useState(new Set());
-
-  // Memoized screen size check
-  const { isMobile, isTablet } = useMemo(() => {
-    if (typeof window === "undefined")
-      return { isMobile: false, isTablet: false };
-    const width = window.innerWidth;
-    return {
-      isMobile: width < 768,
-      isTablet: width >= 768 && width < 1024,
-    };
+  // Simplified mobile check
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Memoized needsScrolling function
-  const needsScrolling = useCallback(
-    (memberCount) => {
-      if (isMobile) return memberCount > 4;
-      if (isTablet) return memberCount > 6;
-      return memberCount > 9;
-    },
-    [isMobile, isTablet]
-  );
+  // Navigation functions
+  const nextSection = () => {
+    if (currentSection < sections.length) {
+      setCurrentSection(prev => prev + 1);
+    }
+  };
 
+  const prevSection = () => {
+    if (currentSection > 0) {
+      setCurrentSection(prev => prev - 1);
+    }
+  };
+      return { isMobile: false, isTablet: false };
+    const width = window.innerWidth;
+    };
+  
   // Component for handling image with fallback
   const MemberImage = ({ member }) => {
     const [imageSrc, setImageSrc] = useState(`/teams/${member.name}.jpg`);
@@ -76,6 +64,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
         setImageError(true);
         setImageSrc(NSCCVector);
       }
+    };
     };
 
     return (
@@ -118,18 +107,24 @@ const OurTeam = ({ teamData: propTeamData }) => {
     };
   }, [scrollYProgress, totalSections]);
 
-  // Memoized MemberCard component to prevent unnecessary re-renders
+  // Simplified MemberCard component without heavy animations
   const MemberCard = useCallback(
-    ({ member }) => (
-      <div className="w-[400px] md:w-[350px] xl:w-[400px] max-w-[90vw] relative flex items-center transition-transform duration-300 hover:scale-105">
-        {/* Card background - no left border, rectangular shape */}
-        <div className="w-full h-[100px] sm:h-[112px] xl:h-[144px] bg-gray-800/95 rounded-r-[25px] sm:rounded-r-[50px] border-t border-r border-b border-white backdrop-blur-sm shadow-lg ml-[50px] sm:ml-[56px] xl:ml-[72px]">
+    ({ member, index = 0 }) => (
+      <div 
+        className="w-[400px] md:w-[350px] xl:w-[400px] max-w-[90vw] relative flex items-center group hover:scale-105 transition-all duration-500"
+      >
+        {/* Simplified Card background */}
+        <div className="w-full h-[100px] sm:h-[112px] xl:h-[144px] rounded-r-[25px] sm:rounded-r-[50px] ml-[50px] sm:ml-[56px] xl:ml-[72px] overflow-hidden relative bg-gradient-to-br from-gray-800/95 via-slate-800/90 to-gray-900/95 backdrop-blur-xl hover:shadow-2xl hover:shadow-cyan-400/20 transition-all duration-500">
+          
+          {/* Simple border */}
+          <div className="absolute inset-0 border-t border-r border-b border-white/30 group-hover:border-cyan-400/50 transition-all duration-500 rounded-r-[25px] sm:rounded-r-[50px]" />
+
           {/* Content inside the card */}
-          <div className="flex flex-col justify-center h-full pl-[50px] sm:pl-[60px] xl:pl-[90px] pr-3 sm:pr-4 xl:pr-6">
-            <h3 className="text-white text-sm sm:text-base xl:text-xl font-normal font-helvetica mb-1 line-clamp-2 sm:line-clamp-1">
+          <div className="relative z-10 flex flex-col justify-center h-full pl-[50px] sm:pl-[60px] xl:pl-[90px] pr-3 sm:pr-4 xl:pr-6">
+            <h3 className="text-white text-sm sm:text-base xl:text-xl font-normal font-helvetica mb-1 line-clamp-2 sm:line-clamp-1 group-hover:text-cyan-400 transition-colors duration-300">
               {member.name}
             </h3>
-            <p className="text-white text-xs sm:text-sm xl:text-lg font-extralight font-helvetica mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-1">
+            <p className="text-gray-300 text-xs sm:text-sm xl:text-lg font-extralight font-helvetica mb-2 sm:mb-3 line-clamp-2 sm:line-clamp-1 group-hover:text-gray-200 transition-colors duration-300">
               {member.designation}
             </p>
 
@@ -149,13 +144,15 @@ const OurTeam = ({ teamData: propTeamData }) => {
                       href={socialItem.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#64b5f6] transition-all duration-300 hover:scale-110 border border-white/20"
+                      className="w-6 h-6 sm:w-8 sm:h-8 xl:w-10 xl:h-10 rounded-full flex items-center justify-center overflow-hidden relative hover:scale-110 hover:bg-gradient-to-r hover:from-cyan-500/80 hover:to-blue-500/60 transition-all duration-300"
                       title={socialItem.name}
                     >
+                      <div className="absolute inset-0 border border-white/20 rounded-full group-hover:border-cyan-400/50 transition-colors duration-300" />
+                      
                       <img
                         src={iconSrc}
                         alt={socialItem.name}
-                        className="w-4 h-4 sm:w-6 sm:h-6 xl:w-8 xl:h-8 object-contain filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+                        className="relative z-10 w-4 h-4 sm:w-6 sm:h-6 xl:w-8 xl:h-8 object-contain filter brightness-0 invert hover:brightness-1 hover:invert-0 transition-all duration-300"
                       />
                     </a>
                   );
@@ -164,8 +161,15 @@ const OurTeam = ({ teamData: propTeamData }) => {
           </div>
         </div>
 
-        {/* Circular image positioned absolutely to overflow from the left side */}
-        <MemberImage member={member} />
+        {/* Simplified Circular image */}
+        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 hover:scale-110 transition-all duration-300">
+          <div className="relative hover:shadow-2xl hover:shadow-cyan-400/30 transition-all duration-500 rounded-full">
+            <MemberImage member={member} />
+            
+            {/* Simple ring effect */}
+            <div className="absolute inset-0 border-2 border-cyan-400/30 rounded-full hover:border-cyan-400/60 transition-colors duration-300" />
+          </div>
+        </div>
       </div>
     ),
     []
@@ -179,33 +183,42 @@ const OurTeam = ({ teamData: propTeamData }) => {
       style={{ height: `${totalSections * 100}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        {/* Unified background matching other sections */}
+        {/* Unified static background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#061529] via-[#112240] to-[#0a192f]" />
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-purple-500/5 to-blue-500/5" />
-
+        
         {/* Static decorative elements */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div
             key={i}
             className="absolute opacity-25"
             style={{
-              left: `${5 + i * 8}%`,
-              top: `${10 + (i % 5) * 18}%`,
-              width: `${4 + Math.random() * 8}px`,
-              height: `${4 + Math.random() * 8}px`,
+              left: `${5 + i * 10}%`,
+              top: `${15 + (i % 4) * 20}%`,
+              width: `${6 + Math.random() * 12}px`,
+              height: `${6 + Math.random() * 12}px`,
             }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg opacity-40" />
+            <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg opacity-50" />
+          </div>
+        ))}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut"
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg opacity-50" />
           </div>
         ))}
 
-        <motion.div
+        <div
           className="flex h-full relative z-10"
           style={{
-            x,
+            transform: `translateX(var(--x, 0))`,
             width: `${totalSections * 100}vw`,
             willChange: "transform",
-            transform: "translateZ(0)", // Force GPU acceleration
           }}
         >
           {/* Custom First Page */}
@@ -219,10 +232,8 @@ const OurTeam = ({ teamData: propTeamData }) => {
                 />
               </h1>
               <p className="text-[#AAAAAA] text-sm sm:text-base md:text-lg lg:text-xl font-helvetica font-extralight leading-relaxed max-w-2xl mx-auto">
-                We’re a passionate team of creators, coders, and doers committed
-                to building meaningful digital experiences. Driven by curiosity
-                and collaboration, we turn ideas into impact — one project at a
-                time.
+                We’re a passionate team of creators, coders, and doers committed to building meaningful digital experiences.
+                Driven by curiosity and collaboration, we turn ideas into impact — one project at a time.
               </p>
             </div>
           </div>
@@ -271,6 +282,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
                           <MemberCard
                             key={`${member.name}-${memberIndex}`}
                             member={member}
+                            index={memberIndex}
                           />
                         ))}
                       </div>
@@ -284,6 +296,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
                           <MemberCard
                             key={`${member.name}-${memberIndex}`}
                             member={member}
+                            index={memberIndex}
                           />
                         ))}
                       </div>
@@ -293,7 +306,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
