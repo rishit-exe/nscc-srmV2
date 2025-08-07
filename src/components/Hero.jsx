@@ -47,7 +47,7 @@ const ShaderBackground = () => {
       vertexShader: vertexShader,
       uniforms: {
         u_color: { value: [0.3137254901960784, 0, 1] },
-        u_background: { value: [0.039, 0.098, 0.184, 1] },
+        u_background: { value: [0.067, 0.133, 0.251, 1] }, // Match #112240 - the middle gradient color for better blending
         u_speed: { value: 0.876 },
         u_detail: { value: 0.074 },
         u_time: { value: 0 },
@@ -240,34 +240,43 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative min-h-screen bg-[#0a192f] overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-[#0a192f] via-[#112240] to-[#061529] overflow-hidden"
       style={{
         minHeight: "100vh",
         width: "100vw",
         position: "relative",
+        marginBottom: "-1px", // Eliminate any potential gap between sections
       }}
     >
       <ShaderBackground />
 
-      {/* Grid Lines - Limited to hero section only */}
-      <div className="absolute inset-0 z-0 hidden lg:block">
+      {/* Gradient Overlay to blend shader with background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f]/20 via-[#112240]/10 to-[#061529]/30 z-[1]" />
+
+      {/* Enhanced Grid Lines - Limited to hero section only */}
+      <div className="absolute inset-0 z-[2] hidden lg:block">
         {/* Vertical Lines */}
-        <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute top-0 left-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute top-0 left-3/4 w-[1px] h-full bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+        <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent"></div>
+        <div className="absolute top-0 left-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-cyan-400/40 to-transparent"></div>
+        <div className="absolute top-0 left-3/4 w-[1px] h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent"></div>
         {/* Horizontal Lines */}
-        <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <div className="absolute top-3/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
+        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
+        <div className="absolute top-3/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
+
+        {/* Grid intersection highlights */}
+        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-cyan-400/20 rounded-full blur-sm transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-cyan-400/15 rounded-full blur-[1px] transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-3/4 left-3/4 w-1 h-1 bg-cyan-400/15 rounded-full blur-[1px] transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 bg-transparent text-white p-4 flex items-center justify-between max-w-full">
+      <nav className="relative z-20 bg-transparent text-white p-4 flex items-center justify-between max-w-full">
         <div className="text-2xl font-bold px-2 md:px-6 flex-shrink-0">
           <img
             src={NSCCEvectorImg}
             alt="NSCC Evector"
-            className="h-8 md:h-10 w-auto"
+            className="h-8 md:h-10 w-auto drop-shadow-lg"
           />
         </div>
 
@@ -406,74 +415,104 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Enhanced Hero Section with spectacular animations */}
-      <section className="relative z-10 text-white min-h-[80vh] md:h-[90vh] flex flex-col items-center justify-center text-center px-4 md:p-6">
-        {/* Static decorative elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute opacity-30"
-              style={{
-                left: `${15 + i * 12}%`,
-                top: `${20 + (i % 3) * 25}%`,
-                width: `${3 + Math.random() * 4}px`,
-                height: `${3 + Math.random() * 4}px`,
-              }}
-            >
-              <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full blur-sm opacity-60" />
+      {/* Enhanced Hero Section with Grid-Aligned Logo */}
+      <section className="relative z-10 text-white min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 md:p-6">
+        {/* Grid-Aligned Main Logo Container */}
+        <div className="w-full h-full flex items-center justify-center relative">
+          {/* Desktop: Grid-aligned logo - centered between grid lines */}
+          <div className="hidden lg:block w-full max-w-7xl mx-auto relative">
+            {/* Logo positioned to be centered between grid intersections */}
+            <div className="flex items-center justify-center relative">
+              <img
+                src={nscchero}
+                alt="NSCC Logo"
+                className="w-auto h-[40vh] max-h-[450px] object-contain relative z-10 hover:brightness-110 hover:contrast-105 transition-all duration-700 ease-out hover:scale-105"
+                style={{
+                  filter: "drop-shadow(0 0 30px rgba(6, 182, 212, 0.3))",
+                  transform: "translateY(-8vh)",
+                }}
+              />
+
+              {/* Subtle glow effect behind logo */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-blue-500/5 to-transparent blur-2xl opacity-60" />
             </div>
-          ))}
-        </div>
 
-        {/* Simplified Main Heading */}
-        <div className="w-full max-w-6xl mx-auto relative">
-          {/* Static background glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-purple-500/10 blur-3xl opacity-60" />
+            {/* Desktop Description - Back to original left position */}
+            <div className="absolute left-[25.6%] w-[24%] top-[75%] text-left">
+              <motion.div
+                className="backdrop-blur-xl bg-gradient-to-br from-white/8 to-white/3 rounded-2xl p-6 border border-cyan-400/20 hover:scale-105 hover:shadow-2xl transition-all duration-500 hover:border-cyan-400/40"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
+              >
+                <div className="relative z-10">
+                  {[
+                    "Dive deep into real-world tech",
+                    "Learn beyond the curriculum",
+                    "Code with purpose, build with impact",
+                    "Join the developers of tomorrow",
+                  ].map((line, index) => (
+                    <motion.p
+                      key={index}
+                      className="text-base text-gray-200 leading-relaxed font-helvetica-neue hover:text-cyan-400 transition-colors duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
+                    >
+                      {line} <br />
+                    </motion.p>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
 
-          <img
-            src={nscchero}
-            alt="NSCC Logo"
-            className="w-full h-auto max-w-full object-contain -mt-8 md:-mt-16 md:relative md:-top-16 md:left-10 relative z-10 hover:brightness-110 hover:contrast-105 transition-all duration-500"
-            style={{
-              filter: "drop-shadow(0 0 30px rgba(6, 182, 212, 0.3))",
-            }}
-          />
-        </div>
+          {/* Tablet: Centered with adjusted sizing */}
+          <div className="hidden md:block lg:hidden w-full max-w-4xl mx-auto relative">
+            <div className="flex items-center justify-center relative">
+              <img
+                src={nscchero}
+                alt="NSCC Logo"
+                className="w-full max-w-[500px] h-auto object-contain relative z-10 hover:brightness-110 hover:contrast-105 transition-all duration-700 ease-out hover:scale-105"
+                style={{
+                  filter: "drop-shadow(0 0 25px rgba(6, 182, 212, 0.3))",
+                  transform: "translateY(-6vh)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-blue-500/5 to-transparent blur-2xl opacity-50" />
+            </div>
+          </div>
 
-        {/* Simplified Positioned Description - Desktop */}
-        <div className="absolute left-[25.6%] w-[24%] top-[75%] text-left hidden xl:block">
-          <div className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 hover:scale-105 hover:shadow-2xl transition-all duration-500">
-            <div className="relative z-10">
-              {[
-                "Dive deep into real-world tech",
-                "Learn beyond the curriculum",
-                "Code with purpose, build with impact",
-                "Join the developers of tomorrow",
-              ].map((line, index) => (
-                <p
-                  key={index}
-                  className="text-base text-gray-200 leading-relaxed font-helvetica-neue hover:text-cyan-400 transition-colors duration-300"
-                >
-                  {line} <br />
-                </p>
-              ))}
+          {/* Mobile: Compact centered layout */}
+          <div className="block md:hidden w-full max-w-sm mx-auto relative">
+            <div className="flex items-center justify-center relative">
+              <img
+                src={nscchero}
+                alt="NSCC Logo"
+                className="w-full h-auto max-w-[280px] object-contain relative z-10 hover:brightness-110 transition-all duration-500"
+                style={{
+                  filter: "drop-shadow(0 0 20px rgba(6, 182, 212, 0.3))",
+                  transform: "translateY(-4vh)",
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 via-blue-500/4 to-transparent blur-xl opacity-40" />
             </div>
           </div>
         </div>
 
-        {/* Enhanced Mobile/Tablet version */}
+        {/* Enhanced Mobile/Tablet Description */}
         <motion.div
-          className="xl:hidden w-full max-w-md mx-auto mt-4 px-4"
+          className="lg:hidden w-full max-w-md mx-auto mt-8 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 1 }}
         >
           <motion.div
-            className="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 relative overflow-hidden"
+            className="backdrop-blur-xl bg-gradient-to-br from-white/8 to-white/3 rounded-2xl p-6 border border-cyan-400/20 relative overflow-hidden"
             whileHover={{
               scale: 1.02,
               boxShadow: "0 20px 40px rgba(6, 182, 212, 0.2)",
+              borderColor: "rgba(6, 182, 212, 0.4)",
             }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -499,8 +538,35 @@ export default function Hero() {
                 </motion.p>
               ))}
             </motion.div>
+            {/* Subtle animated background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 opacity-50" />
           </motion.div>
         </motion.div>
+
+        {/* Floating decorative elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute opacity-20"
+              style={{
+                left: `${10 + i * 15}%`,
+                top: `${20 + (i % 3) * 30}%`,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 4 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full blur-[1px]" />
+            </motion.div>
+          ))}
+        </div>
       </section>
     </div>
   );

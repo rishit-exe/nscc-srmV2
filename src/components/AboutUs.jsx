@@ -15,7 +15,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div id="about-us">
+    <div id="about-us" style={{ marginTop: "-1px" }}>
       <>
         <div className="bg-gradient-to-b from-[#0a192f] via-[#112240] to-[#061529] min-h-screen relative">
           {/* Unified static background */}
