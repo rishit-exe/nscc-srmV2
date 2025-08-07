@@ -88,12 +88,12 @@ const OurTeam = ({ teamData: propTeamData }) => {
           onError={handleImageError}
         />
         {/* Left half border overlay */}
-        <div 
+        <div
           className="absolute top-0 left-0 w-1/2 h-full rounded-l-full border-l border-t border-b border-white pointer-events-none"
           style={{
-            borderRight: 'none',
-            borderTopRightRadius: '0',
-            borderBottomRightRadius: '0'
+            borderRight: "none",
+            borderTopRightRadius: "0",
+            borderBottomRightRadius: "0",
           }}
         />
       </div>
