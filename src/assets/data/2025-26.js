@@ -18,9 +18,8 @@ const leads = [
         designation: "Co-Founder",
         bio: "Designing impact, building change.",
         social: [
-          { name: "github", url: "https://github.com/janedoe" },
-          { name: "instagram", url: "https://instagram.com/janedoe" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/janedoe" },
+          { name: "instagram", url: "https://www.instagram.com/ayu__shhhhhh?igsh=Y3pyNnkza2h6a2Rz" },
+          { name: "linkedin", url: "https://www.linkedin.com/in/ayush-srivastava29" },
         ],
       },
     ],
