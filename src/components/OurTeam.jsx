@@ -79,13 +79,24 @@ const OurTeam = ({ teamData: propTeamData }) => {
     };
 
     return (
-      <img
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[100px] h-[100px] sm:w-[112px] sm:h-[112px] xl:w-[144px] xl:h-[144px] rounded-full object-cover border-0 shadow-lg z-10"
-        src={imageSrc}
-        alt={member.name}
-        loading="lazy"
-        onError={handleImageError}
-      />
+      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[99px] h-[99px] sm:w-[111px] sm:h-[111px] xl:w-[143px] xl:h-[143px] z-10">
+        <img
+          className="w-full h-full rounded-full object-cover shadow-lg"
+          src={imageSrc}
+          alt={member.name}
+          loading="lazy"
+          onError={handleImageError}
+        />
+        {/* Left half border overlay */}
+        <div 
+          className="absolute top-0 left-0 w-1/2 h-full rounded-l-full border-l border-t border-b border-white pointer-events-none"
+          style={{
+            borderRight: 'none',
+            borderTopRightRadius: '0',
+            borderBottomRightRadius: '0'
+          }}
+        />
+      </div>
     );
   };
 
@@ -125,7 +136,7 @@ const OurTeam = ({ teamData: propTeamData }) => {
         {/* Card background - no left border, rectangular shape */}
         <div className="w-full h-[100px] sm:h-[112px] xl:h-[144px] bg-gray-800/95 rounded-r-[25px] sm:rounded-r-[50px] border-t border-r border-b border-white backdrop-blur-sm shadow-lg ml-[50px] sm:ml-[56px] xl:ml-[72px]">
           {/* Content inside the card */}
-          <div className="flex flex-col justify-center h-full pl-[50px] sm:pl-[60px] xl:pl-[90px] pr-3 sm:pr-4 xl:pr-6">
+          <div className="flex flex-col justify-center h-full pl-[60px] sm:pl-[70px] xl:pl-[90px] pr-4 sm:pr-5 xl:pr-6">
             <h3 className="text-white text-sm sm:text-base xl:text-xl font-normal font-helvetica mb-1 line-clamp-2 sm:line-clamp-1">
               {member.name}
             </h3>
@@ -249,11 +260,11 @@ const OurTeam = ({ teamData: propTeamData }) => {
                 key={sectionIndex}
                 className="w-dvw h-dvh relative px-4 sm:px-8"
               >
-                <h1 className="absolute top-18 sm:top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-3xl sm:text-4xl md:text-6xl lg:text-[120px] text-[#FFFFFF] font-normal font-helvetica text-center mix-blend-overlay leading-tight tracking-tight backdrop-blur-[20px] opacity-100 bg-clip-text z-20 mb-10 mt-5">
+                <h1 className="absolute top-4 sm:top-6 md:top-8 left-1/2 transform -translate-x-1/2 text-2xl sm:text-3xl md:text-5xl lg:text-[80px] text-[#FFFFFF] font-normal font-helvetica text-center mix-blend-overlay leading-tight tracking-tight backdrop-blur-[20px] opacity-100 bg-clip-text z-20 mb-6">
                   {section.category}
                 </h1>
 
-                <div className="absolute top-24 sm:top-24 md:top-32 lg:top-40 left-1/2 transform -translate-x-1/2 w-full max-w-7xl px-4 h-[calc(100vh-120px)] sm:h-[calc(100vh-140px)] md:h-[calc(100vh-180px)] lg:h-[calc(100vh-200px)]">
+                <div className="absolute top-16 sm:top-20 md:top-28 lg:top-32 left-1/2 transform -translate-x-1/2 w-full max-w-7xl px-4 h-[calc(100vh-80px)] sm:h-[calc(100vh-100px)] md:h-[calc(100vh-140px)] lg:h-[calc(100vh-160px)]">
                   {requiresScrolling ? (
                     <div
                       className={`h-full transition-all duration-300 ${
