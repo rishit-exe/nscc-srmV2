@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
-const App = () => {
+const Footer = () => {
   return (
     <div className="container">
       <header className="header">
@@ -71,4 +71,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Footer;
