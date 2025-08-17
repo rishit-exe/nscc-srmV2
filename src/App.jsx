@@ -7,12 +7,14 @@ import OurTeam from './components/OurTeam'
 import Gallery from './components/gallery/Gallery'
 import FollowUs from './components/FollowUs/FollowUs'
 import Footer from './components/Footer/Footer'
+import RecruitmentPopup from './components/RecruitmentPopup'
 import './App.css'
 
 
 export default function App() {
   return (
     <>
+      <RecruitmentPopup />
       <Hero />
       <AboutUs />
       <div id="domains">

@@ -281,7 +281,7 @@ export default function Hero() {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex w-full justify-between px-4 xl:px-20 max-w-4xl">
+        <ul className="hidden lg:flex w-full justify-between px-4 xl:px-20 max-w-5xl">
           {navItems.map((item) => (
             <li
               key={item.name}
@@ -297,6 +297,18 @@ export default function Hero() {
               </button>
             </li>
           ))}
+          
+          {/* Recruitments Button */}
+          <li className="px-2 xl:px-4 py-2">
+            <a
+              href="https://recruitments.nsccsrm.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#31C4BF] hover:bg-cyan-500 text-black font-semibold px-4 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 border border-cyan-400/20 hover:border-cyan-400/40 font-helvetica-neue text-sm xl:text-base animate-pulse"
+            >
+              🚀 Recruitments Open
+            </a>
+          </li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -402,6 +414,26 @@ export default function Hero() {
                   </button>
                 </li>
               ))}
+              
+              {/* Mobile Recruitments Button */}
+              <li
+                className={`transform transition-all duration-500 delay-${
+                  navItems.length * 100
+                } ${
+                  isMenuOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0"
+                }`}
+              >
+                <a
+                  href="https://recruitments.nsccsrm.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-black bg-[#31C4BF] hover:bg-cyan-500 px-6 py-3 rounded-lg shadow-lg text-2xl font-medium transition-all duration-300 hover:translate-x-2 text-center border border-cyan-400/20 hover:border-cyan-400/40 animate-pulse"
+                >
+                  🚀 Recruitments Open
+                </a>
+              </li>
             </ul>
           </div>
           <div className="flex-1"></div>
