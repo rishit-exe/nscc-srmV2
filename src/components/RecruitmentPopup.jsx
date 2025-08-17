@@ -46,7 +46,7 @@ const RecruitmentPopup = () => {
 
           <div className="text-center">
             <a
-              href="https://lu.ma/ur2lwvf9"
+              href="https://lu.ma/q6w482ik"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#31C4BF] hover:bg-cyan-500 text-black font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 border border-cyan-400/20 hover:border-cyan-400/40"
