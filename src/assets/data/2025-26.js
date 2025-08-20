@@ -7,10 +7,10 @@ const leads = [
         designation: "Founder",
         bio: "We're paving something insane. If you're not with the culture, get out.",
         social: [
-          { name: "github", url: "https://github.com/arshbhatia" },
-          { name: "instagram", url: "https://instagram.com/arsh.bhatia" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/arshbhatia" },
-          { name: "other_link", url: "https://arshbhatia.dev" },
+          { name: "github", url: "https://github.com/arshbhatia8" },
+          { name: "instagram", url: "https://www.instagram.com/arshbhatia08" },
+          { name: "linkedin", url: "https://www.linkedin.com/in/arsh-bhatia-/" },
+          // { name: "other_link", url: "https://arshbhatia.dev" },
         ],
       },
       {
