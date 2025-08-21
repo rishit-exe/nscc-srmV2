@@ -9,16 +9,22 @@ import image2 from "./content/image_6160x4640_2.jpeg";
 import image3 from "./content/image_6160x4640_3.jpeg";
 import image4 from "./content/image_6160x4640_4.jpeg";
 import image5 from "./content/image_6160x4640_5.jpeg";
+import hacknova1 from "./content/hacknova (1).jpg";
+import hacknova2 from "./content/hacknova (2).jpg";
+import hacknova3 from "./content/hacknova (3).jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Updated image data with the actual images from content folder
 const galleryImages = [
-  { id: 1, src: image1, w: 6160, h: 4640, y: "5%" },
-  { id: 2, src: image2, w: 6160, h: 4640, y: "-10%" },
-  { id: 3, src: image3, w: 6160, h: 4640, y: "15%" },
-  { id: 4, src: image4, w: 6160, h: 4640, y: "-5%" },
-  { id: 5, src: image5, w: 6160, h: 4640, y: "10%" },
+  { id: 1, src: hacknova2, w: 794, h: 619, y: "-12%" },
+  { id: 2, src: image5, w: 6160, h: 4640, y: "10%" },
+  { id: 3, src: image1, w: 6160, h: 4640, y: "5%" },
+  { id: 4, src: hacknova1, w: 892, h: 619, y: "8%" },
+  { id: 5, src: image2, w: 6160, h: 4640, y: "-10%" },
+  { id: 6, src: hacknova3, w: 619, h: 619, y: "18%" },
+  { id: 7, src: image3, w: 6160, h: 4640, y: "15%" },
+  { id: 8, src: image4, w: 6160, h: 4640, y: "-5%" },
 ];
 
 export default function Gallery() {
