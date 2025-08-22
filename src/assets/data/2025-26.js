@@ -406,12 +406,32 @@ const creatives = [
   },
 ];
 
+const facultyConvener = [
+  {
+    category: "Faculty Convener",
+    members: [
+      {
+        name: "Dr. Karthikeyan H",
+        designation: "Faculty Convener",
+        bio: "Faculty Convener guiding NSCC-SRM with expertise and vision.",
+        social: [
+          { name: "linkedin", url: "https://www.linkedin.com/in/karthikeyan-h-5aa8042a/" },
+          { name: "other_link", url: "https://scholar.google.com/citations?user=F-XxufQAAAAJ&hl=en" },
+          { name: "other_link", url: "https://www.srmist.edu.in/faculty/h-karthikeyan/" }
+        ],
+      },
+    ],
+  },
+];
+
 const teamData = {
-    leads,
+  facultyConvener,
+  leads,
     coreTeam,
     techTeam,
     nonTechTeam,
-    creatives
+    creatives,
+    
 }
 
 export default teamData;
