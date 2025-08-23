@@ -42,9 +42,9 @@
   width: max-content;
   align-items: center;
   padding: 0 15vw; /* Provides space on the sides */
-  gap: 6vw; /* Further reduced gap to ensure all images fit */
+  gap: 6vw; /* Gap between images */
   /* Ensure the carousel can accommodate all images */
-  min-width: 100%;
+  min-width: calc(100vw + 400vw); /* Generous width to ensure all images fit */
 }
 
 /* Wrapper for each image, dynamically sized */

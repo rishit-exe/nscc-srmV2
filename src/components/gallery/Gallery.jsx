@@ -54,27 +54,34 @@ export default function Gallery() {
       gsap.set(carouselElement, { x: "100vw" });
 
       const computedStyle = window.getComputedStyle(carouselElement);
-      const paddingLeft = parseFloat(computedStyle.paddingLeft);
       const paddingRight = parseFloat(computedStyle.paddingRight);
 
-      // Calculate the total scrollable width more accurately
-      const totalScroll =
-        carouselElement.scrollWidth - window.innerWidth + paddingRight;
+      // Calculate the actual width needed to show all images
+      const images = carouselElement.querySelectorAll('.gallery-image-wrapper');
+      let totalImageWidth = 0;
 
-      // Ensure we scroll through all images by adding extra distance
-      const extraScroll = Math.max(0, totalScroll * 0.3); // Add 30% extra to ensure last image is fully visible
+      images.forEach((img) => {
+        totalImageWidth += img.offsetWidth;
+      });
 
-      // Ensure minimum scroll distance to show all images
+      // Add gaps between images (6vw each, converted to pixels)
+      const gapWidth = (window.innerWidth * 0.06) * (images.length - 1);
+
+      // Add padding (15vw on each side)
+      const totalPadding = window.innerWidth * 0.3; // 15vw * 2
+
+      // Calculate total scroll distance needed
+      const totalContentWidth = totalImageWidth + gapWidth + totalPadding;
       const minScrollDistance = Math.max(
-        totalScroll + extraScroll,
-        window.innerWidth * 0.5
+        totalContentWidth - window.innerWidth,
+        totalImageWidth * 0.8 // Fallback minimum
       );
 
       // Debug logging to check carousel dimensions
-      console.log("Carousel scrollWidth:", carouselElement.scrollWidth);
+      console.log("Total content width:", totalContentWidth);
       console.log("Window width:", window.innerWidth);
-      console.log("Total scroll:", totalScroll);
-      console.log("Extra scroll:", extraScroll);
+      console.log("Min scroll distance:", minScrollDistance);
+      console.log("Total image width:", totalImageWidth);
       console.log("Number of images:", galleryImages.length);
 
       let tl = gsap.timeline({
@@ -151,7 +158,7 @@ export default function Gallery() {
 
       {/* Enhanced carousel with advanced animations */}
       <div className="gallery-carousel" ref={carousel}>
-        {galleryImages.map((image, index) => (
+        {galleryImages.map((image) => (
           <div
             key={image.id}
             className="gallery-image-wrapper group hover:scale-105 hover:z-10 transition-all duration-500"
