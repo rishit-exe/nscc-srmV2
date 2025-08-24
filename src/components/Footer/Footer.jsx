@@ -75,16 +75,28 @@ const Footer = () => {
                 <h3>Contact Us</h3>
                 <p>+91 6230931075</p>
                 <p>+91 8789019185</p>
-                <p>info@nsccsrm.in</p>
+                <p>nscc@srmist.edu.in</p>
               </div>
               <div className="location">
                 <h3>Location</h3>
-                <p>Newton School Coding Club SRMIST</p>
-                <p>Department of Networking and Communications, School of Computing</p>
-                <p>SRM Institute of Science and Technology</p>
-                <p>Kattankulathur, Chennai, 603203</p>
-                <p>10am—6pm</p>
+                <div className="map-container">
+                  <iframe
+                      title="NSCC SRMIST Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7780.60833030308!2d80.03934309274017!3d12.823611099913151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f70d37c35faf%3A0x8cd4ea84a63b4131!2sSRM%20UNIVERSITY-KTR%20CAMPUS%2C%20Potheri%2C%20Kattankulathur%2C%20Tamil%20Nadu%20603203!5e0!3m2!1sen!2sin!4v1755937302878!5m2!1sen!2sin"
+                      width="100%"
+                      height="220"
+                      style={{ border: 0, borderRadius: "10px" }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <div className="address-caption">
+                    SRM University, Chennai <br />
+                    10am—6pm
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
           <div className="footer-bottom">
