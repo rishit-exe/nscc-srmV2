@@ -75,6 +75,10 @@ const Footer = () => {
                 <h3>Contact Us</h3>
                 <p>+91 6230931075</p>
                 <p>+91 8789019185</p>
+
+
+
+
                 <p>nscc@srmist.edu.in</p>
               </div>
               <div className="location">
