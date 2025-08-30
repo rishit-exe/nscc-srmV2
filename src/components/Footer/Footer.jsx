@@ -74,7 +74,7 @@ const Footer = () => {
               <div className="contact">
                 <h3>Contact Us</h3>
                 <p>+91 6230931075</p>
-                <p>+91 8789019185</p>
+                <p>+91 9211780967</p>
 
 
 
