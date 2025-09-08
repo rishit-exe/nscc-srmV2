@@ -416,7 +416,7 @@ export default function Hero() {
               ))}
               
               {/* Mobile Recruitments Button */}
-              <li
+{/*               <li
                 className={`transform transition-all duration-500 delay-${
                   navItems.length * 100
                 } ${
@@ -433,7 +433,7 @@ export default function Hero() {
                 >
                   🚀 Recruitments Open
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="flex-1"></div>
