@@ -14,7 +14,7 @@ import './App.css'
 export default function App() {
   return (
     <>
-      <RecruitmentPopup />
+{/*       <RecruitmentPopup /> */}
       <Hero />
       <AboutUs />
       <div id="domains">
