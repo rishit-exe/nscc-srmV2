@@ -299,7 +299,7 @@ export default function Hero() {
           ))}
           
           {/* Recruitments Button */}
-          <li className="px-2 xl:px-4 py-2">
+{/*           <li className="px-2 xl:px-4 py-2">
             <a
               href="https://recruitments.nsccsrm.in/"
               target="_blank"
@@ -308,7 +308,7 @@ export default function Hero() {
             >
               🚀 Recruitments Open
             </a>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
