@@ -25,8 +25,6 @@ const leads = [
     ],
   },
 ];
-
-
 const coreTeam = [
   {
     category: "Core Team",
@@ -55,8 +53,6 @@ const coreTeam = [
     ],
   },
 ];
-
-
 const techTeam = [
   {
     category: "Technical",
@@ -149,8 +145,6 @@ const techTeam = [
     ],
   },
 ];
-
-
 const nonTechTeam = [
   {
     category: "Non Tech",
@@ -261,8 +255,6 @@ const nonTechTeam = [
     ],
   },
 ];
-
-
 const creatives = [
   {
     category: "Creatives",
@@ -297,7 +289,6 @@ const creatives = [
           { name: "other_link", url: "https://dribbble.com/Burly_Ben" },
         ],
       },
-      
       {
         name: "Keshav Gehlot",
         designation: "Associate",
@@ -322,7 +313,6 @@ const creatives = [
     ],
   },
 ];
-
 const facultyConvener = [
   {
     category: "Faculty Convener",
@@ -340,7 +330,6 @@ const facultyConvener = [
     ],
   },
 ];
-
 const teamData = {
   facultyConvener,
   leads,
@@ -348,7 +337,5 @@ const teamData = {
     techTeam,
     nonTechTeam,
     creatives,
-    
 }
-
 export default teamData;
