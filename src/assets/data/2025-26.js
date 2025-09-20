@@ -25,8 +25,6 @@ const leads = [
     ],
   },
 ];
-
-
 const coreTeam = [
   {
     category: "Core Team",
@@ -55,8 +53,6 @@ const coreTeam = [
     ],
   },
 ];
-
-
 const techTeam = [
   {
     category: "Technical",
@@ -149,8 +145,6 @@ const techTeam = [
     ],
   },
 ];
-
-
 const nonTechTeam = [
   {
     category: "Non Tech",
@@ -261,8 +255,6 @@ const nonTechTeam = [
     ],
   },
 ];
-
-
 const creatives = [
   {
     category: "Creatives",
@@ -297,7 +289,6 @@ const creatives = [
           { name: "other_link", url: "https://dribbble.com/Burly_Ben" },
         ],
       },
-      
       {
         name: "Keshav Gehlot",
         designation: "Associate",
@@ -319,20 +310,9 @@ const creatives = [
           { name: "linkedin", url: "https://www.linkedin.com/in/praneet-rathore-74752b217" },
         ],
       },
-      {
-        name: "Anurag Patel",
-        designation: "Team Member",
-        bio: "",
-        social: [
-          { name: "github", url: "" },
-          { name: "instagram", url: "" },
-          { name: "linkedin", url: "" },
-        ],
-      },
     ],
   },
 ];
-
 const facultyConvener = [
   {
     category: "Faculty Convener",
@@ -350,7 +330,6 @@ const facultyConvener = [
     ],
   },
 ];
-
 const teamData = {
   facultyConvener,
   leads,
@@ -358,7 +337,5 @@ const teamData = {
     techTeam,
     nonTechTeam,
     creatives,
-    
 }
-
 export default teamData;
