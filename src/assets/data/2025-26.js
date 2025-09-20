@@ -319,16 +319,6 @@ const creatives = [
           { name: "linkedin", url: "https://www.linkedin.com/in/praneet-rathore-74752b217" },
         ],
       },
-      {
-        name: "Anurag Patel",
-        designation: "Team Member",
-        bio: "",
-        social: [
-          { name: "github", url: "" },
-          { name: "instagram", url: "" },
-          { name: "linkedin", url: "" },
-        ],
-      },
     ],
   },
 ];
