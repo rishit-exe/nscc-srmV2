@@ -110,14 +110,14 @@ const techTeam = [
         ],
       },
       {
-        name: "Abhiraj Bhowmick",
+        name: "Hridayesh Upadhyay",
         designation: "Team Member",
-        bio: "Carpe Diem",
+        bio: "Tech enthusiast passionate about building solutions and exploring innovation through collaboration.",
         social: [
-          { name: "github", url: "https://github.com/RainboeStrykr" },
-          { name: "instagram", url: "https://www.instagram.com/abhiraj.fr/" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/abhiraj-bhowmick/" },
-          { name: "other_link", url: "https://abhiraj.co/" },
+          { name: "github", url: "https://github.com/Hridayesh11" },
+          { name: "instagram", url: "https://www.instagram.com/hridayesh_11" },
+          { name: "linkedin", url: "www.linkedin.com/in/hridayesh-upadhyay-08765a268" },
+          { name: "other_link", url: "https://hridayesh11.github.io" },
         ],
       },
       {
@@ -129,17 +129,6 @@ const techTeam = [
           { name: "instagram", url: "https://instagram.com/riyansh.lunia" },
           { name: "linkedin", url: "https://www.linkedin.com/in/riyanshlunia" },
           { name: "other_link", url: "https://riyanshlunia.netlify.app" },
-        ],
-      },
-      {
-        name: "Hridayesh Upadhyay",
-        designation: "Team Member",
-        bio: "Tech enthusiast passionate about building solutions and exploring innovation through collaboration.",
-        social: [
-          { name: "github", url: "https://github.com/Hridayesh11" },
-          { name: "instagram", url: "https://www.instagram.com/hridayesh_11" },
-          { name: "linkedin", url: "www.linkedin.com/in/hridayesh-upadhyay-08765a268" },
-          { name: "other_link", url: "https://hridayesh11.github.io" },
         ],
       },
     ],
@@ -222,13 +211,13 @@ const nonTechTeam = [
         ],
       },
       {
-        name: "Abhishek Roy",
+        name: "Disha Wadhwani",
         designation: "Team Member",
-        bio: "Run on Bollywood beats, big ideas, and the occasional caffeine-fueled brainstorm-leading with vibes and jokes that sometimes land.",
+        bio: "Rakhshanda Yadav, a confident, resilient, and ambitious B.Tech 2nd-year student, always ready to embrace challenges and push boundaries.",
         social: [
-          { name: "github", url: "https://github.com/abhi-3231" },
-          { name: "instagram", url: "https://www.instagram.com/abhiii____3/" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/abhishek-roy-54175a319/" },
+          { name: "github", url: "https://github.com/Dishaaaaa.21" },
+          { name: "instagram", url: "https://www.instagram.com/Dishaaaaa.21" },
+          { name: "linkedin", url: "http://www.linkedin.com/in/disha-wadhwani" },
         ],
       },
       {
@@ -242,16 +231,15 @@ const nonTechTeam = [
         ],
       },
       {
-        name: "Disha Wadhwani",
+        name: "Abhishek Roy",
         designation: "Team Member",
-        bio: "Rakhshanda Yadav, a confident, resilient, and ambitious B.Tech 2nd-year student, always ready to embrace challenges and push boundaries.",
+        bio: "Run on Bollywood beats, big ideas, and the occasional caffeine-fueled brainstorm-leading with vibes and jokes that sometimes land.",
         social: [
-          { name: "github", url: "https://github.com/Dishaaaaa.21" },
-          { name: "instagram", url: "https://www.instagram.com/Dishaaaaa.21" },
-          { name: "linkedin", url: "http://www.linkedin.com/in/disha-wadhwani" },
+          { name: "github", url: "https://github.com/abhi-3231" },
+          { name: "instagram", url: "https://www.instagram.com/abhiii____3/" },
+          { name: "linkedin", url: "https://www.linkedin.com/in/abhishek-roy-54175a319/" },
         ],
       },
-      
     ],
   },
 ];
