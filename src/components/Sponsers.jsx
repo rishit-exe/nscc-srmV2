@@ -1,152 +1,164 @@
 import React from "react";
-import FlipCard from "./utils/FlipCard";
+import Marquee from "react-fast-marquee";
 
-export default function Sponsers() {
+export default function Sponsors() {
   const sponsorsData = [
     {
       name: "Razorpay",
-      bgColor: "linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #14b8a6 100%)",
       image: "/sponser/razorpay.png",
-      description:
-        "Leading payment gateway solution empowering businesses with seamless transactions.",
       website: "https://razorpay.com",
-      accent: "#31C4BF",
     },
     {
       name: "Oracle",
-      bgColor: "linear-gradient(135deg, #164e63 0%, #0891b2 50%, #06b6d4 100%)",
       image: "/sponser/oracale.png",
-      description:
-        "Global technology leader providing cloud computing and database solutions.",
       website: "https://oracle.com",
-      accent: "#67e8f9",
     },
     {
       name: "JP Morgan Chase & Co.",
-      bgColor: "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%)",
       image: "/sponser/jpmorgan.png",
-      description:
-        "Leading global financial services firm driving innovation in banking.",
       website: "https://jpmorganchase.com",
-      accent: "#22d3ee",
     },
     {
       name: "Newton School",
-      bgColor: "linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%)",
-      image: "/sponser/nslogo.png",
-      description:
-        "Transforming careers through practical, industry-relevant tech education.",
+      image: "/sponser/nslogo1.png",
       website: "https://newtonschool.co",
-      accent: "#60a5fa",
     },
     {
       name: "Microsoft",
-      bgColor: "linear-gradient(135deg, #155e75 0%, #0891b2 50%, #22d3ee 100%)",
       image: "/sponser/Microsoft-Logo.png",
-      description:
-        "Empowering every person and organization on the planet to achieve more.",
       website: "https://www.microsoft.com/en-in",
-      accent: "#67e8f9",
     },
     {
       name: "Sabre",
-      bgColor: "linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #14b8a6 100%)",
       image: "/sponser/Sabre_Corporation_logo.png",
-      description: "Technology solutions that take travel to the next level.",
       website: "https://www.sabre.com/",
-      accent: "#31C4BF",
+    },
+    {
+      name: "AOPS",
+      image: "/sponser/aops.png",
+      website: "https://artofproblemsolving.com/?srsltid=AfmBOoqSyVK8RTyJuHAFHwdE1etOTW5JthcX1yLmXjmlXhukTuO_XibE",
+    },
+    {
+      name: "Belgian Waffles",
+      image: "/sponser/belgian.png",
+      website: "https://thebelgianwaffle.co/",
+    },
+    {
+      name: "Devfolio",
+      image: "/sponser/devfolio.png",
+      website: "https://devfolio.co/",
+    },
+    {
+      name: "Dominos",
+      image: "/sponser/dominos.png",
+      website: "https://www.dominos.co.in/",
+    },
+    {
+      name: "Echo3d",
+      image: "/sponser/echo3D.png",
+      website: "https://www.echo3d.com/",
+    },
+    {
+      name: "ETH",
+      image: "/sponser/ETHIndia.png",
+      website: "https://www.linkedin.com/company/ethindia/?originalSubdomain=in",
+    },
+    {
+      name: "Gyandhan",
+      image: "/sponser/gyandhan.png",
+      website: "https://www.gyandhan.com/?srsltid=AfmBOorycnnUF2-Iq45dF1QGfq-VDIR6L0kSpQ7KNIIPnMPhHpdROwJQ",
+    },
+    {
+      name: "InterviewBuddy",
+      image: "/sponser/interview.png",
+      website: "https://interviewbuddy.net/?srsltid=AfmBOorA2xLpFhWahKPaXKYGpfUPLCggh1z_Zy8oeq9nr_A0ow80n9hn",
+    },
+    {
+      name: "LeapBeeGee",
+      image: "/sponser/leapgeebee.png",
+      website: "https://www.geebeeworld.com/",
+    },
+    {
+      name: "OFFO",
+      image: "/sponser/offo.png",
+      website: "https://offostore.com/?fbclid=PAZXh0bgNhZW0CMTEAAafml2CV1ih1Hd-ubPjIYcv8095wa1YpR-tstPGTqB1NtnDHVJvlox92yin1Og_aem_fPaKk1Ad7d2c8zIb_-6zww",
+    },
+    {
+      name: "Polygon",
+      image: "/sponser/polygon.png",
+      website: "https://polygon.technology/",
+    },
+    {
+      name: "Purple",
+      image: "/sponser/purple.png",
+      website: "https://www.purplepalette.in/",
+    },
+    {
+      name: "SRM Dei",
+      image: "/sponser/srmdei.png",
+      website: "https://www.srmdei.com/",
+    },
+    {
+      name: "StickyMonkey",
+      image: "/sponser/Sticky.png",
+      website: "https://www.thestickymonkey.com/",
+    },
+    {
+      name: "Sybgen",
+      image: "/sponser/sybgen.png",
+      website: "https://sybgen.com/",
+    },
+    {
+      name: "Wolfram",
+      image: "/sponser/Wolfram.png",
+      website: "https://www.wolfram.com/",
+    },
+    {
+      name: "ZSecurity",
+      image: "/sponser/zsecurity.png",
+      website: "https://zsecurity.org/",
     },
   ];
 
   return (
-    <div id="sponsors">
-      <div className="bg-gradient-to-b from-[#061529] via-[#112240] to-[#0a192f] min-h-screen relative">
-        {/* Unified background overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-purple-500/5 to-blue-500/5" />
+    <div
+      id="sponsors"
+      className="py-16 bg-gradient-to-b from-[#061529] via-[#112240] to-[#0a192f]"
+    >
+      {/* Section Title */}
+      <div className="text-center mb-10">
+         <h1 className="text-4xl sm:text-6xl lg:text-[120px] font-normal text-white font-helvetica">
+            Our{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#31C4BF] to-[#3b82f6]">
+            Sponsors
+         </span>
+        </h1>
+      </div>
 
-        {/* Static decorative elements */}
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute opacity-25"
-            style={{
-              left: `${5 + i * 12}%`,
-              top: `${10 + (i % 4) * 20}%`,
-              width: `${3 + Math.random() * 6}px`,
-              height: `${3 + Math.random() * 6}px`,
-            }}
-          >
-            <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg opacity-50" />
-          </div>
-        ))}
-
-        <div className="relative z-10 font-helvetica-neue px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-12">
-              <div className="flex-1">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white text-center lg:text-left leading-tight">
-                  Journeys Beyond
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#31C4BF] to-[#3b82f6] mt-2">
-                    NSCC SRM
-                  </span>
-                </h1>
-              </div>
-              <div className="lg:w-1/3 lg:max-w-md">
-                <p className="text-base sm:text-lg text-gray-300 text-center lg:text-left leading-relaxed">
-                  We're proud to be supported by organizations that empower
-                  <span className="text-[#31C4BF] font-medium">
-                    {" "}
-                    innovation
-                  </span>
-                  ,
-                  <span className="text-[#3b82f6] font-medium">
-                    {" "}
-                    technology
-                  </span>
-                  , and
-                  <span className="text-[#22d3ee] font-medium"> growth</span>.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* White marquee strip */}
+      <div className="bg-white py-6">
+        <Marquee speed={60} gradient={false}>
+  <div className="flex items-center gap-10 px-4">
+    {sponsorsData.map((sponsor, index) => (
+      <a
+        key={index}
+        href={sponsor.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center"
+      >
+        <div className="w-40 h-24 flex items-center justify-center">
+          <img
+            src={sponsor.image}
+            alt={sponsor.name}
+            className="max-h-full max-w-full object-contain"
+          />
         </div>
+      </a>
+    ))}
+  </div>
+</Marquee>
 
-        {/* Modern responsive layout */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-12">
-          <div className="max-w-7xl mx-auto">
-            {/* Desktop View */}
-            <div className="hidden lg:flex justify-center items-center gap-8 flex-wrap">
-              {sponsorsData.map((sponsor, index) => (
-                <FlipCard
-                  key={index}
-                  name={sponsor.name}
-                  bgColor={sponsor.bgColor}
-                  image={sponsor.image}
-                  description={sponsor.description}
-                  website={sponsor.website}
-                  accent={sponsor.accent}
-                />
-              ))}
-            </div>
-
-            {/* Tablet & Mobile View */}
-            <div className="lg:hidden">
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
-                {sponsorsData.map((sponsor, index) => (
-                  <FlipCard
-                    key={index}
-                    name={sponsor.name}
-                    bgColor={sponsor.bgColor}
-                    image={sponsor.image}
-                    description={sponsor.description}
-                    website={sponsor.website}
-                    accent={sponsor.accent}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
