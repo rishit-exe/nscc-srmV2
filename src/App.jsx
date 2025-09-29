@@ -9,6 +9,7 @@ import FollowUs from './components/FollowUs/FollowUs'
 import Footer from './components/Footer/Footer'
 import RecruitmentPopup from './components/RecruitmentPopup'
 import './App.css'
+import Journey from './components/Journey'
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
       <div id="events">
         <Events />
       </div>
+      <Journey />
       <Sponsers />
       <div id="team">
         <OurTeam />
