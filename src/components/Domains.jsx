@@ -5,10 +5,17 @@ const Domains = () => {
 
   const sections = [
     {
-      title: "Tech",
+      title: "Technical",
       color: "#2563EB",
       leftText:
         "Boost your coding skills, unleash your creativity, and build innovative solutions that shape a better tomorrow.",
+      // imgSrc: 'https://via.placeholder.com/150'
+    },
+      {
+      title: "Non Technical",
+      color: "#4A90E5",
+      leftText:
+        "Amplifying NSCC’s voice is what we do best. Whether it’s finding the right partners, scaling events, or handling public relations, we work as one to stay approachable, impactful, and relevant.",
       // imgSrc: 'https://via.placeholder.com/150'
     },
     {
@@ -18,13 +25,7 @@ const Domains = () => {
         "Creatives craft, curate, and publish engaging content that reflects the club's everyday activities. It’s a team of some of the most imaginative and original minds you’ll ever come across.",
       // imgSrc: 'https://via.placeholder.com/150'
     },
-    {
-      title: "Non Tech",
-      color: "#4A90E5",
-      leftText:
-        "Amplifying NSCC’s voice is what we do best. Whether it’s finding the right partners, scaling events, or handling public relations, we work as one to stay approachable, impactful, and relevant.",
-      // imgSrc: 'https://via.placeholder.com/150'
-    },
+  
   ];
 
   return (
@@ -57,7 +58,7 @@ const Domains = () => {
             <p className="text-lg md:text-xl text-white/70 max-w-3xl">
               Our domains unite creative thinkers, tech enthusiasts, and
               organizers to collaborate, innovate, and drive impactful
-              initiatives within NSCC.
+              initiatives within NSCC SRM.
             </p>
           </div>
 

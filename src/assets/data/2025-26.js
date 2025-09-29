@@ -176,7 +176,7 @@ const nonTechTeam = [
           { name: "github", url: "https://github.com/" },
           { name: "instagram", url: "https://www.instagram.com/inshal_ashraf?igsh=MWczY3R0YzhlN2x4cA%3D%3D&utm_source=qr" },
           { name: "linkedin", url: "https://www.linkedin.com/in/md-inshal-ashraf-0b85a92bb" },
-          { name: "other_link", url: "https://rishit-exe.github.io/mport/" },
+          { name: "other_link", url: "https://inshalashraf.github.io/portfolio/" },
         ],
       },
       {
@@ -220,16 +220,7 @@ const nonTechTeam = [
           { name: "linkedin", url: "http://www.linkedin.com/in/disha-wadhwani" },
         ],
       },
-      {
-        name: "Shambhavi Akhouri",
-        designation: "Team Member",
-        bio: "Thinks like a developer, acts like a strategist, and delivers like a leader.",
-        social: [
-          { name: "github", url: "https://github.com/shambhaviakhouri" },
-          { name: "instagram", url: "https://www.instagram.com/shambhavi_ak?igsh=M3NjY2lyM2Uwd3pz" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/shambhavi-akhouri-1979b5283" },
-        ],
-      },
+    
       {
         name: "Abhishek Roy",
         designation: "Team Member",
@@ -288,16 +279,7 @@ const creatives = [
           { name: "other_link", url: "https://portfolio-rho-snowy-34.vercel.app/" },
         ],
       },
-      {
-        name: "Praneet Rathore",
-        designation: "Associate",
-        bio: "Heart full of hope & love and trusting God's plan.",
-        social: [
-          { name: "github", url: "https://github.com/Praneet6" },
-          { name: "instagram", url: "https://www.instagram.com/_praneet_6?igsh=MW1ranF5Y3ozZno3cA==" },
-          { name: "linkedin", url: "https://www.linkedin.com/in/praneet-rathore-74752b217" },
-        ],
-      },
+ 
     ],
   },
 ];

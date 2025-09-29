@@ -65,7 +65,7 @@ export default function AboutUs() {
                     beyond the campus. Our digital presence is strong, with
                     5.5K+ Instagram followers and 1K+ on LinkedIn. With 10+
                     successful events conducted, we've created meaningful
-                    learning and networking opportunities. NSCC stands out as a
+                    learning and networking opportunities. NSCC SRM stands out as a
                     space where students collaborate, build, and innovate
                     together.
                   </p>
