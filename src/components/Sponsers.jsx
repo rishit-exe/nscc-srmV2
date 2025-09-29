@@ -1,5 +1,6 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
+import { SponsorImage } from "./OptimizedImage";
 
 export default function Sponsors() {
   const sponsorsData = [
@@ -148,9 +149,8 @@ export default function Sponsors() {
         className="flex items-center justify-center"
       >
         <div className="w-40 h-24 flex items-center justify-center">
-          <img
-            src={sponsor.image}
-            alt={sponsor.name}
+          <SponsorImage
+            sponsorName={sponsor.image.split('/')[2]} // Extract filename from path
             className="max-h-full max-w-full object-contain"
           />
         </div>
