@@ -207,6 +207,7 @@ export default function Hero() {
   const navItems = [
     { name: "Domains", href: "#domains" },
     { name: "Live Events", href: "#events" },
+    { name: "Our Sponsors", href: "#sponsors" },
     { name: "Our Team", href: "#team" },
     { name: "Contact", href: "#contact" },
   ];
