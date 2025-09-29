@@ -224,19 +224,6 @@ const EventCard = ({ event }) => (
       <p className="live-events-title">{event.title}</p>
       <p className="live-events-description">{event.description}</p>
     </div>
-    <div className="event-card-buttons">
-      <button className="details-button hover:bg-gradient-to-r hover:from-cyan-400 hover:to-purple-500 transition-all duration-300">
-        Details
-      </button>
-      {event.tags.map((tag, idx) => (
-        <button
-          key={idx}
-          className="tag-button hover:bg-gradient-to-r hover:from-purple-500 hover:to-cyan-400 transition-all duration-300"
-        >
-          {tag}
-        </button>
-      ))}
-    </div>
   </div>
 );
 
