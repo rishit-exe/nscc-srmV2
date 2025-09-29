@@ -1,10 +1,9 @@
 [
   {
     "id": 1,
-    "title": "CodeFest",
+    "title": "CODEFEST",
     "date": "Jan 12, 2024",
     "description": "A thrilling two-day coding extravaganza that united bright minds to tackle challenges, spark innovation, and push the boundaries of technology.",
-    "tags": ["NSCC", "DSA"],
     "imageUrl": "./events-img/one.webp"
   },
   {
@@ -12,7 +11,6 @@
     "title": "DECODE HOUR",
     "date": "Jan 15, 2024",
     "description": "The flagship two-round Codeathon at SRMIST drew over 600 students, spotlighting talent from diverse academic backgrounds.",
-    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+2"
   },
   {
@@ -20,31 +18,27 @@
     "title": "CODE RUSH",
     "date": "Jan 18, 2024",
     "description": "Code Rush was a high-energy competition where participants showcased their coding expertise, solved thrilling challenges, and vied for exciting prizes.",
-    "tags": ["NSCC", "Coding"],
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+3"
   },
   {
     "id": 4,
-    "title": "IdeaNova",
+    "title": "IDEANOVA",
     "date": "Jan 21, 2024",
-    "description": "IdeaNova was a vibrant event where teams showcased creative solutions to real-world problems",
-    "tags": ["NSCC", "Ideathon"],
+    "description": "IdeaNova 2024 was a vibrant ideathon organized by NSCC SRM, bringing together over 200 participants to present creative solutions to real-world problems. With a prize pool of ₹20,000, the event encouraged innovation, collaboration, and impactful idea generation.",
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+4"
   },
   {
     "id": 5,
     "title": "HACK NOVA",
     "date": "Jan 24, 2024",
-    "description": "This vibrant coding fest at SRMIST brought together developers, innovators, and tech enthusiasts for an action-packed experience. ",
-    "tags": ["NSCC", "Hackathon"],
+    "description": "Hack Nova was a hackathon by NSCC SRM with over 500 online and offline participants, bringing together developers and innovators to build creative tech solutions.",
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
   },
   {
     "id": 6,
-    "title": "PlaceOpedia",
+    "title": "PLACEOPEDIA",
     "date": "Jan 24, 2024",
-    "description": "",
-    "tags": ["NSCC", "Hackathon"],
+    "description": "The PlaceOpedia session witnessed the participation of over 100 students. Delivered by our founder Arsh Bhatia, it was an engaging and insightful event that provided valuable guidance on placements, career strategies, and skill development.",
     "imageUrl": "https://placehold.co/390x250/001a36/ffffff?text=Event+5"
   }
 ]
