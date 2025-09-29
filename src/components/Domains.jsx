@@ -15,7 +15,7 @@ const Domains = () => {
       title: "Non Technical",
       color: "#4A90E5",
       leftText:
-        "Amplifying NSCC’s voice is what we do best. Whether it’s finding the right partners, scaling events, or handling public relations, we work as one to stay approachable, impactful, and relevant.",
+        "Amplifying NSCC SRM's voice is what we do best. Whether it’s finding the right partners, scaling events, or handling public relations, we work as one to stay approachable, impactful, and relevant.",
       // imgSrc: 'https://via.placeholder.com/150'
     },
     {
