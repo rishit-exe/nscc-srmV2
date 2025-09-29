@@ -4,36 +4,6 @@ import Marquee from "react-fast-marquee";
 export default function Sponsors() {
   const sponsorsData = [
     {
-      name: "Razorpay",
-      image: "/sponser/razorpay.png",
-      website: "https://razorpay.com",
-    },
-    {
-      name: "Oracle",
-      image: "/sponser/oracale.png",
-      website: "https://oracle.com",
-    },
-    {
-      name: "JP Morgan Chase & Co.",
-      image: "/sponser/jpmorgan.png",
-      website: "https://jpmorganchase.com",
-    },
-    {
-      name: "Newton School",
-      image: "/sponser/nslogo1.png",
-      website: "https://newtonschool.co",
-    },
-    {
-      name: "Microsoft",
-      image: "/sponser/Microsoft-Logo.png",
-      website: "https://www.microsoft.com/en-in",
-    },
-    {
-      name: "Sabre",
-      image: "/sponser/Sabre_Corporation_logo.png",
-      website: "https://www.sabre.com/",
-    },
-    {
       name: "AOPS",
       image: "/sponser/aops.png",
       website: "https://artofproblemsolving.com/?srsltid=AfmBOoqSyVK8RTyJuHAFHwdE1etOTW5JthcX1yLmXjmlXhukTuO_XibE",
