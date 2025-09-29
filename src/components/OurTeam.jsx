@@ -7,6 +7,7 @@ import BackgroundImage from "../assets/img/teams/bg.png";
 import TextureImage from "../assets/img/teams/texture.png";
 import teamData from "../assets/data/2025-26.js";
 import NSCCVector from "../assets/NSCC EVECTOR.png";
+import OptimizedImage, { TeamMemberImage } from "./OptimizedImage";
 
 import githubIcon from "../assets/img/teams/social-icons/github.png";
 import twitterIcon from "../assets/img/teams/social-icons/twitter.png";
@@ -66,26 +67,15 @@ const OurTeam = ({ teamData: propTeamData }) => {
     [isMobile, isTablet]
   );
 
-  // Component for handling image with fallback
+  // Component for handling image with fallback - OPTIMIZED VERSION
   const MemberImage = ({ member }) => {
-    const [imageSrc, setImageSrc] = useState(`/teams/${member.name}.jpg`);
-    const [imageError, setImageError] = useState(false);
-
-    const handleImageError = () => {
-      if (!imageError) {
-        setImageError(true);
-        setImageSrc(NSCCVector);
-      }
-    };
-
     return (
       <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-[99px] h-[99px] sm:w-[111px] sm:h-[111px] xl:w-[143px] xl:h-[143px] z-10">
-        <img
+        <TeamMemberImage
+          memberName={member.name}
           className="w-full h-full rounded-full object-cover shadow-lg"
-          src={imageSrc}
-          alt={member.name}
-          loading="lazy"
-          onError={handleImageError}
+          sizes="(max-width: 640px) 99px, (max-width: 768px) 111px, 143px"
+          priority={member.name === "Dr. Karthikeyan H"} // Priority loading for Faculty Convener
         />
         {/* Left half border overlay */}
         <div
